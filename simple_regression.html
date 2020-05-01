@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>2. Stataユーザインターフェイスの説明 · GitBook</title>
+        <title>4.1 単回帰分析 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="basiccommands.html" />
+    <link rel="next" href="residuals.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="7.html" />
     
 
     </head>
@@ -102,7 +102,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="ui.html">
+        <li class="chapter " data-level="1.2" data-path="ui.html">
             
                 <a href="ui.html">
             
@@ -225,7 +225,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="simple_regression.html">
+        <li class="chapter active" data-level="1.4" data-path="simple_regression.html">
             
                 <a href="simple_regression.html">
             
@@ -307,7 +307,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >2. Stataユーザインターフェイスの説明</a>
+        <a href="." >4.1 単回帰分析</a>
     </h1>
 </div>
 
@@ -322,21 +322,61 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="stata&#x30E6;&#x30FC;&#x30B6;&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30A4;&#x30B9;">Stata&#x30E6;&#x30FC;&#x30B6;&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30A4;&#x30B9;</h1>
-<h2 id="stata&#x306E;&#x8D77;&#x52D5;&#x753B;&#x9762;&#x306B;&#x3064;&#x3044;&#x3066;">Stata&#x306E;&#x8D77;&#x52D5;&#x753B;&#x9762;&#x306B;&#x3064;&#x3044;&#x3066;</h2>
-<p>Stata&#x3092;&#x8D77;&#x52D5;&#x3059;&#x308B;&#x3068;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306A;&#x753B;&#x9762;&#x304C;&#x51FA;&#x3066;&#x304F;&#x308B;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;&#x4EE5;&#x4E0B;&#x3067;&#x306F;&#xFF0C;Stata&#x306E;&#x5404;&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;&#x304C;&#x3069;&#x306E;&#x3088;&#x3046;&#x306A;&#x5F79;&#x5272;&#x3092;&#x6301;&#x3063;&#x3066;&#x3044;&#x308B;&#x304B;&#x306B;&#x3064;&#x3044;&#x3066;&#x8AAC;&#x660E;&#x3057;&#x307E;&#x3059;&#x3002;</p>
-<p><img src="https://user-images.githubusercontent.com/44024242/80766811-3e456a00-8b81-11ea-8089-2222c5caaf8e.png" alt="Stata&#x306E;&#x8D77;&#x52D5;&#x753B;&#x9762;"></p>
-<ol>
-<li>&#x3053;&#x3053;&#x306F;<strong>Command&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;</strong>&#x3067;&#x3059;&#x3002;&#x3053;&#x3053;&#x306B;Stata&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x30BF;&#x30A4;&#x30D7;&#x3057;&#x3066;Enter&#x3092;&#x62BC;&#x3059;&#x3053;&#x3068;&#x3067;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;&#x3082;&#x3057;&#x5B9F;&#x884C;&#x3057;&#x305F;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x304C;&#x30C7;&#x30FC;&#x30BF;&#x30BB;&#x30C3;&#x30C8;&#x306B;&#x5909;&#x66F4;&#x3092;&#x52A0;&#x3048;&#x308B;&#x3088;&#x3046;&#x306A;&#x51E6;&#x7406;&#x3060;&#x3063;&#x305F;&#x5834;&#x5408;&#xFF0C;&#x305D;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3060;&#x3051;&#x3092;&#x53D6;&#x308A;&#x3051;&#x3057;&#x3059;&#x308B;&#x3053;&#x3068;&#x306F;&#x3067;&#x304D;&#x305A;&#xFF0C;&#x6700;&#x521D;&#x304B;&#x3089;&#x3084;&#x308A;&#x76F4;&#x3059;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</li>
-<li>&#x3053;&#x3053;&#x306F;<strong>Results&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;</strong>&#x3067;&#x3059;&#x3002;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x304B;&#x3089;&#x306E;&#x30A2;&#x30A6;&#x30C8;&#x30D7;&#x30C3;&#x30C8;&#x306F;&#x3053;&#x3053;&#x306B;&#x8868;&#x793A;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</li>
-<li>&#x3053;&#x3053;&#x306F;<strong>Variables&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;</strong>&#x3067;&#x3059;&#x3002;&#x30E1;&#x30E2;&#x30EA;&#x306B;&#x4FDD;&#x5B58;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x30C7;&#x30FC;&#x30BF;&#x30BB;&#x30C3;&#x30C8;&#x306E;&#x5909;&#x6570;&#x304C;&#x3053;&#x3053;&#x306B;&#x8868;&#x793A;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</li>
-<li>&#x3053;&#x3053;&#x306F;<strong>Properties&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;</strong>&#x3067;&#x3059;&#x3002;&#x30C7;&#x30FC;&#x30BF;&#x30BB;&#x30C3;&#x30C8;&#x3084;&#x5909;&#x6570;&#x306B;&#x95A2;&#x3057;&#x3066;&#x306E;&#x60C5;&#x5831;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</li>
-</ol>
-<h2 id="do&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x3064;&#x3044;&#x3066;">Do&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x3064;&#x3044;&#x3066;</h2>
-<p>Do&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3068;&#x306F;&#x4E00;&#x9023;&#x306E;Stata&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x304C;&#x66F8;&#x304B;&#x308C;&#x3066;&#x3044;&#x308B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x3053;&#x3068;&#x3067;&#x3059;&#x3002;do&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x8A18;&#x8FF0;&#x3057;&#x3066;&#x304A;&#x304F;&#x3053;&#x3068;&#x3067;&#xFF0C;&#x540C;&#x3058;&#x7D50;&#x679C;&#x3092;&#x4F55;&#x5EA6;&#x3067;&#x3082;&#x518D;&#x73FE;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;Do-file Editor&#x306E;&#x3068;&#x3053;&#x308D;&#x304B;&#x3089;&#xFF0C;&#x65B0;&#x305F;&#x306A;Do&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x4F5C;&#x6210;&#xFF0C;&#x307E;&#x305F;&#x65E2;&#x5B58;&#x306E;Do&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x958B;&#x304F;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
-<p><img src="https://user-images.githubusercontent.com/44024242/80767761-a006d380-8b83-11ea-948a-75b3f9501118.png" alt="Do-file Editor&#x3078;&#x79FB;&#x52D5;"></p>
-<p>Do&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x3042;&#x308B;&#x5168;&#x3066;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x306B;&#x306F;&#xFF0C;Do-file Editor&#x3067;&quot;Do&quot;&#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3057;&#x307E;&#x3059;&#x3002;</p>
-<p><img src="https://user-images.githubusercontent.com/44024242/80767916-fffd7a00-8b83-11ea-8f44-d37728b3647f.png" alt="Do&#x30DC;&#x30BF;&#x30F3;"></p>
+                                <p>&#x4EE5;&#x4E0B;&#x3067;&#x306F;&#x57FA;&#x672C;&#x7684;&#x306A;&#x56DE;&#x5E30;&#x5206;&#x6790;&#x306E;&#x65B9;&#x6CD5;&#x306B;&#x3064;&#x3044;&#x3066;&#x8AAC;&#x660E;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<h3 id="&#x5358;&#x56DE;&#x5E30;&#x5206;&#x6790;">&#x5358;&#x56DE;&#x5E30;&#x5206;&#x6790;</h3>
+<p>&#x5358;&#x56DE;&#x5E30;&#x5206;&#x6790;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3067;&#x884C;&#x3048;&#x307E;&#x3059;&#x3002;&#x4F7F;&#x7528;&#x3057;&#x3066;&#x3044;&#x308B;&#x30C7;&#x30FC;&#x30BF;&#x30BB;&#x30C3;&#x30C8;&#x306F;3&#x7AE0;&#x306E;&#x3082;&#x306E;&#x540C;&#x69D8;&#x3067;&#x3059;&#x3002;&#x4EE5;&#x4E0B;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3067;&#x306F;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x306E;&#x6700;&#x5F8C;&#x306B;<code>r</code>&#x304C;&#x5165;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x304C;&#xFF0C;&#x3053;&#x308C;&#x306F;&#x9811;&#x5065;&#x6027;&#x306E;&#x3042;&#x308B;&#x6A19;&#x6E96;&#x8AA4;&#x5DEE;(Heteroskedasticity-robust standard errors)&#x3092;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x305F;&#x3081;&#x3067;&#xFF0C;&#x3053;&#x308C;&#x304C;&#x306A;&#x3044;&#x3068;&#x5747;&#x4E00;&#x5206;&#x6563;&#x306E;&#x3082;&#x3068;&#x3067;&#x306E;&#x6A19;&#x6E96;&#x8AA4;&#x5DEE;&#x3092;&#x4F7F;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#xFF1A;</p>
+<pre><code>* &#x88AB;&#x8AAC;&#x660E;&#x5909;&#x6570;&#x306F;salary, &#x8AAC;&#x660E;&#x5909;&#x6570;&#x304C;roe
+* reg&#x306F;regress&#x3092;&#x7565;&#x3057;&#x305F;&#x3082;&#x306E;&#x3002;regress&#x3068;&#x3057;&#x3066;&#x3082;&#x3088;&#x3044;&#x3002;
+* &#x6700;&#x5F8C;&#x306E;r&#x306F;robust&#x3092;&#x7701;&#x7565;&#x3057;&#x305F;&#x3082;&#x306E;&#x3002;robust&#x3068;&#x3057;&#x3066;&#x3082;&#x3088;&#x3044;&#x3002;
+* reg &#x8AAC;&#x660E;&#x5909;&#x6570;&#x3000;&#x88AB;&#x8AAC;&#x660E;&#x5909;&#x6570;&#x3000;&#x306E;&#x9806;&#x3067;&#x66F8;&#x304F;&#x3002;
+
+reg salary roe, r
+</code></pre><p>&#x7D50;&#x679C;&#xFF1A;</p>
+<pre><code>. reg salary roe, r
+
+Linear regression                               Number of obs     =        209
+                                                F(1, 207)         =       7.34
+                                                Prob &gt; F          =     0.0073
+                                                R-squared         =     0.0132
+                                                Root MSE          =     1366.6
+
+------------------------------------------------------------------------------
+             |               Robust
+      salary |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         roe |   18.50119   6.829448     2.71   0.007     5.036994    31.96538
+       _cons |   963.1913   121.1062     7.95   0.000     724.4316    1201.951
+------------------------------------------------------------------------------
+</code></pre><h3 id="&#x91CD;&#x56DE;&#x5E30;&#x5206;&#x6790;">&#x91CD;&#x56DE;&#x5E30;&#x5206;&#x6790;</h3>
+<p>&#x91CD;&#x56DE;&#x5E30;&#x5206;&#x6790;&#x306B;&#x3064;&#x3044;&#x3066;&#x3082;&#x57FA;&#x672C;&#x7684;&#x306B;&#x306F;&#x5358;&#x56DE;&#x5E30;&#x5206;&#x6790;&#x3068;&#x540C;&#x3058;&#x3067;&#x3059;&#x3002;</p>
+<p>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#xFF1A;</p>
+<pre><code>* reg &#x88AB;&#x8AAC;&#x660E;&#x5909;&#x6570; 1&#x3064;&#x76EE;&#x306E;&#x8AAC;&#x660E;&#x5909;&#x6570; 2&#x3064;&#x76EE;&#x306E;&#x8AAC;&#x660E;&#x5909;&#x6570;&#x3000;..., r &#x306E;&#x3088;&#x3046;&#x66F8;&#x304F;
+reg salary roe ros, r
+</code></pre><p>&#x7D50;&#x679C;&#xFF1A;</p>
+<pre><code>. reg salary roe ros, r
+
+Linear regression                               Number of obs     =        209
+                                                F(2, 206)         =       4.37
+                                                Prob &gt; F          =     0.0138
+                                                R-squared         =     0.0178
+                                                Root MSE          =     1366.7
+
+------------------------------------------------------------------------------
+             |               Robust
+      salary |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         roe |   21.62757   7.409501     2.92   0.004     7.019396    36.23575
+         ros |    -1.4209   .9266429    -1.53   0.127     -3.24782    .4060199
+       _cons |   997.2839   131.5177     7.58   0.000     737.9907    1256.577
+------------------------------------------------------------------------------
+</code></pre><h3 id="&#x6B8B;&#x5DEE;&#x3092;&#x51FA;&#x529B;&#x3059;&#x308B;">&#x6B8B;&#x5DEE;&#x3092;&#x51FA;&#x529B;&#x3059;&#x308B;</h3>
+<p>&#x56DE;&#x5E30;&#x5206;&#x6790;&#x306E;&#x6B8B;&#x5DEE;&#x3092;&#x51FA;&#x529B;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x306F;<code>predict</code>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3068;<code>residuals</code>&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x5229;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>reg salary roe, r
+predict uhat1, residuals
+reg salary roe ros, r
+predict uhat2, residuals
+</code></pre><p>&#x4E0A;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3067;&#x306F;1&#x3064;&#x76EE;&#x306E;&#x56DE;&#x5E30;&#x5206;&#x6790;&#x306E;&#x6B8B;&#x5DEE;&#x3092;<code>uhat1</code>&#x306B;&#x4FDD;&#x5B58;&#x3057;&#xFF0C;<code>uhat2</code>&#x306B;&#x306F;2&#x3064;&#x76EE;&#x306E;&#x56DE;&#x5E30;&#x5206;&#x6790;&#x306E;&#x7D50;&#x679C;&#x3092;&#x4FDD;&#x5B58;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;4&#x884C;&#x3092;&#x307E;&#x3068;&#x3081;&#x3066;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;2&#x3064;&#x306E;&#x56DE;&#x5E30;&#x5206;&#x6790;&#x306E;&#x6B8B;&#x5DEE;&#x304C;&#x30C7;&#x30FC;&#x30BF;&#x306B;&#x4FDD;&#x5B58;&#x3055;&#x308C;&#xFF0C;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x898B;&#x308B;&#x3068;&#x5143;&#x304B;&#x3089;&#x3042;&#x308B;&#x5909;&#x6570;&#x306B;&#x52A0;&#x3048;&#x3066;<code>uhat1</code>&#x3068;<code>uhat2</code>&#x304C;&#x8FFD;&#x52A0;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x308F;&#x304B;&#x308A;&#x307E;&#x3059;&#x3002;</p>
 
                                 
                                 </section>
@@ -364,12 +404,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 1. Stataイントロダクション">
+                <a href="7.html" class="navigation navigation-prev " aria-label="Previous page: 3.7 ヒストグラム・散布図">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="basiccommands.html" class="navigation navigation-next " aria-label="Next page: 3. Stataの基本的なコマンド">
+                <a href="residuals.html" class="navigation navigation-next " aria-label="Next page: 4.2 残差を出力する">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -380,7 +420,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2. Stataユーザインターフェイスの説明","level":"1.2","depth":1,"next":{"title":"3. Stataの基本的なコマンド","level":"1.3","depth":1,"path":"basiccommands.md","ref":"basiccommands.md","articles":[{"title":"3.1 データの数の取得","level":"1.3.1","depth":2,"path":"1.md","ref":"1.md","articles":[]},{"title":"3.2 変数の説明・変数タイプの表示","level":"1.3.2","depth":2,"path":"2.md","ref":"2.md","articles":[]},{"title":"3.3 表を表示","level":"1.3.3","depth":2,"path":"3.md","ref":"3.md","articles":[]},{"title":"3.4 条件を満たすデータの個数の表示","level":"1.3.4","depth":2,"path":"4.md","ref":"4.md","articles":[]},{"title":"3.5 変数の概要を表示","level":"1.3.5","depth":2,"path":"5.md","ref":"5.md","articles":[]},{"title":"3.6 変数の概要に条件をつける","level":"1.3.6","depth":2,"path":"6.md","ref":"6.md","articles":[]},{"title":"3.7 ヒストグラム・散布図","level":"1.3.7","depth":2,"path":"7.md","ref":"7.md","articles":[]}]},"previous":{"title":"1. Stataイントロダクション","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ui.md","mtime":"2020-05-01T01:30:29.404Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-01T02:18:26.854Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.1 単回帰分析","level":"1.4","depth":1,"next":{"title":"4.2 残差を出力する","level":"1.5","depth":1,"path":"residuals.md","ref":"residuals.md","articles":[]},"previous":{"title":"3.7 ヒストグラム・散布図","level":"1.3.7","depth":2,"path":"7.md","ref":"7.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"simple_regression.md","mtime":"2020-05-01T08:36:20.137Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-01T02:18:26.854Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
