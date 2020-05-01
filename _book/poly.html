@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>2. Stataユーザインターフェイスの説明 · GitBook</title>
+        <title>4.2 重回帰分析・logを用いた回帰 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="basiccommands.html" />
+    <link rel="next" href="outreg2.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="residuals.html" />
     
 
     </head>
@@ -102,7 +102,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="ui.html">
+        <li class="chapter " data-level="1.2" data-path="ui.html">
             
                 <a href="ui.html">
             
@@ -251,7 +251,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="poly.html">
+        <li class="chapter active" data-level="1.6" data-path="poly.html">
             
                 <a href="poly.html">
             
@@ -307,7 +307,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >2. Stataユーザインターフェイスの説明</a>
+        <a href="." >4.2 重回帰分析・logを用いた回帰</a>
     </h1>
 </div>
 
@@ -322,22 +322,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="stata&#x30E6;&#x30FC;&#x30B6;&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30A4;&#x30B9;">Stata&#x30E6;&#x30FC;&#x30B6;&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30A4;&#x30B9;</h1>
-<h2 id="stata&#x306E;&#x8D77;&#x52D5;&#x753B;&#x9762;&#x306B;&#x3064;&#x3044;&#x3066;">Stata&#x306E;&#x8D77;&#x52D5;&#x753B;&#x9762;&#x306B;&#x3064;&#x3044;&#x3066;</h2>
-<p>Stata&#x3092;&#x8D77;&#x52D5;&#x3059;&#x308B;&#x3068;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306A;&#x753B;&#x9762;&#x304C;&#x51FA;&#x3066;&#x304F;&#x308B;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;&#x4EE5;&#x4E0B;&#x3067;&#x306F;&#xFF0C;Stata&#x306E;&#x5404;&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;&#x304C;&#x3069;&#x306E;&#x3088;&#x3046;&#x306A;&#x5F79;&#x5272;&#x3092;&#x6301;&#x3063;&#x3066;&#x3044;&#x308B;&#x304B;&#x306B;&#x3064;&#x3044;&#x3066;&#x8AAC;&#x660E;&#x3057;&#x307E;&#x3059;&#x3002;</p>
-<p><img src="https://user-images.githubusercontent.com/44024242/80766811-3e456a00-8b81-11ea-8089-2222c5caaf8e.png" alt="Stata&#x306E;&#x8D77;&#x52D5;&#x753B;&#x9762;"></p>
-<ol>
-<li>&#x3053;&#x3053;&#x306F;<strong>Command&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;</strong>&#x3067;&#x3059;&#x3002;&#x3053;&#x3053;&#x306B;Stata&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x30BF;&#x30A4;&#x30D7;&#x3057;&#x3066;Enter&#x3092;&#x62BC;&#x3059;&#x3053;&#x3068;&#x3067;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;&#x3082;&#x3057;&#x5B9F;&#x884C;&#x3057;&#x305F;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x304C;&#x30C7;&#x30FC;&#x30BF;&#x30BB;&#x30C3;&#x30C8;&#x306B;&#x5909;&#x66F4;&#x3092;&#x52A0;&#x3048;&#x308B;&#x3088;&#x3046;&#x306A;&#x51E6;&#x7406;&#x3060;&#x3063;&#x305F;&#x5834;&#x5408;&#xFF0C;&#x305D;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3060;&#x3051;&#x3092;&#x53D6;&#x308A;&#x3051;&#x3057;&#x3059;&#x308B;&#x3053;&#x3068;&#x306F;&#x3067;&#x304D;&#x305A;&#xFF0C;&#x6700;&#x521D;&#x304B;&#x3089;&#x3084;&#x308A;&#x76F4;&#x3059;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</li>
-<li>&#x3053;&#x3053;&#x306F;<strong>Results&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;</strong>&#x3067;&#x3059;&#x3002;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x304B;&#x3089;&#x306E;&#x30A2;&#x30A6;&#x30C8;&#x30D7;&#x30C3;&#x30C8;&#x306F;&#x3053;&#x3053;&#x306B;&#x8868;&#x793A;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</li>
-<li>&#x3053;&#x3053;&#x306F;<strong>Variables&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;</strong>&#x3067;&#x3059;&#x3002;&#x30E1;&#x30E2;&#x30EA;&#x306B;&#x4FDD;&#x5B58;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x30C7;&#x30FC;&#x30BF;&#x30BB;&#x30C3;&#x30C8;&#x306E;&#x5909;&#x6570;&#x304C;&#x3053;&#x3053;&#x306B;&#x8868;&#x793A;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</li>
-<li>&#x3053;&#x3053;&#x306F;<strong>Properties&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;</strong>&#x3067;&#x3059;&#x3002;&#x30C7;&#x30FC;&#x30BF;&#x30BB;&#x30C3;&#x30C8;&#x3084;&#x5909;&#x6570;&#x306B;&#x95A2;&#x3057;&#x3066;&#x306E;&#x60C5;&#x5831;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</li>
-</ol>
-<h2 id="do&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x3064;&#x3044;&#x3066;">Do&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x3064;&#x3044;&#x3066;</h2>
-<p>Do&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3068;&#x306F;&#x4E00;&#x9023;&#x306E;Stata&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x304C;&#x66F8;&#x304B;&#x308C;&#x3066;&#x3044;&#x308B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x3053;&#x3068;&#x3067;&#x3059;&#x3002;do&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x8A18;&#x8FF0;&#x3057;&#x3066;&#x304A;&#x304F;&#x3053;&#x3068;&#x3067;&#xFF0C;&#x540C;&#x3058;&#x7D50;&#x679C;&#x3092;&#x4F55;&#x5EA6;&#x3067;&#x3082;&#x518D;&#x73FE;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;Do-file Editor&#x306E;&#x3068;&#x3053;&#x308D;&#x304B;&#x3089;&#xFF0C;&#x65B0;&#x305F;&#x306A;Do&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x4F5C;&#x6210;&#xFF0C;&#x307E;&#x305F;&#x65E2;&#x5B58;&#x306E;Do&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x958B;&#x304F;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
-<p><img src="https://user-images.githubusercontent.com/44024242/80767761-a006d380-8b83-11ea-948a-75b3f9501118.png" alt="Do-file Editor&#x3078;&#x79FB;&#x52D5;"></p>
-<p>Do&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x3042;&#x308B;&#x5168;&#x3066;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x306B;&#x306F;&#xFF0C;Do-file Editor&#x3067;&quot;Do&quot;&#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3057;&#x307E;&#x3059;&#x3002;</p>
-<p><img src="https://user-images.githubusercontent.com/44024242/80767916-fffd7a00-8b83-11ea-8f44-d37728b3647f.png" alt="Do&#x30DC;&#x30BF;&#x30F3;"></p>
-
+                                
                                 
                                 </section>
                             
@@ -364,12 +349,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 1. Stataイントロダクション">
+                <a href="residuals.html" class="navigation navigation-prev " aria-label="Previous page: 4.2 残差を出力する">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="basiccommands.html" class="navigation navigation-next " aria-label="Next page: 3. Stataの基本的なコマンド">
+                <a href="outreg2.html" class="navigation navigation-next " aria-label="Next page: 4.3 回帰分析結果を表で出力する">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -380,7 +365,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2. Stataユーザインターフェイスの説明","level":"1.2","depth":1,"next":{"title":"3. Stataの基本的なコマンド","level":"1.3","depth":1,"path":"basiccommands.md","ref":"basiccommands.md","articles":[{"title":"3.1 データの数の取得","level":"1.3.1","depth":2,"path":"1.md","ref":"1.md","articles":[]},{"title":"3.2 変数の説明・変数タイプの表示","level":"1.3.2","depth":2,"path":"2.md","ref":"2.md","articles":[]},{"title":"3.3 表を表示","level":"1.3.3","depth":2,"path":"3.md","ref":"3.md","articles":[]},{"title":"3.4 条件を満たすデータの個数の表示","level":"1.3.4","depth":2,"path":"4.md","ref":"4.md","articles":[]},{"title":"3.5 変数の概要を表示","level":"1.3.5","depth":2,"path":"5.md","ref":"5.md","articles":[]},{"title":"3.6 変数の概要に条件をつける","level":"1.3.6","depth":2,"path":"6.md","ref":"6.md","articles":[]},{"title":"3.7 ヒストグラム・散布図","level":"1.3.7","depth":2,"path":"7.md","ref":"7.md","articles":[]}]},"previous":{"title":"1. Stataイントロダクション","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ui.md","mtime":"2020-05-01T01:30:29.404Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-01T02:18:26.854Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.2 重回帰分析・logを用いた回帰","level":"1.6","depth":1,"next":{"title":"4.3 回帰分析結果を表で出力する","level":"1.7","depth":1,"path":"outreg2.md","ref":"outreg2.md","articles":[]},"previous":{"title":"4.2 残差を出力する","level":"1.5","depth":1,"path":"residuals.md","ref":"residuals.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"poly.md","mtime":"2020-05-01T08:22:21.141Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-01T02:18:26.854Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

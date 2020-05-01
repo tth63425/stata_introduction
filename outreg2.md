@@ -6,6 +6,15 @@
 
 このような表を出力するためには`outreg2`コマンドを使用します。
 
+まず，`outreg2`を以下のコマンドをCommandウィンドウに入力してインストールします。
+
+コマンド：
+```
+ssc install outreg2
+```
+
+次に回帰分析のコマンドに`outreg2`の行を以下のように加えます。
+
 コマンド：
 ```
 reg salary roe, r
@@ -23,7 +32,9 @@ outreg2 using regression.doc, append
 この例ではワードファイルに結果を出力していますが，`regression.doc`を`regression.xls`や`regression.txt`，`regression.tex`などと変えることによってエクセルファイル，テキストファイル，TeXファイルに結果を出力することもできます。
 
 エクセルファイルの例：
+
 ![エクセルファイル](https://user-images.githubusercontent.com/44024242/80791381-6d34fd80-8bcc-11ea-963a-9b5b83dc3e92.png)
 
 テキストファイルの例：
+
 ![テキストファイルの例](https://user-images.githubusercontent.com/44024242/80791473-b71de380-8bcc-11ea-8128-22e0aa0feb76.png)
