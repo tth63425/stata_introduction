@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>3.5 変数の概要を表示 · GitBook</title>
+        <title>4.2 回帰分析結果を表で出力する · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="6.html" />
     
-    
-    <link rel="prev" href="4.html" />
+    <link rel="prev" href="4-1.html" />
     
 
     </head>
@@ -181,7 +179,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.5" data-path="5.html">
+        <li class="chapter " data-level="1.3.5" data-path="5.html">
             
                 <a href="5.html">
             
@@ -238,7 +236,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="4-2.html">
+        <li class="chapter active" data-level="1.5" data-path="4-2.html">
             
                 <a href="4-2.html">
             
@@ -281,7 +279,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >3.5 変数の概要を表示</a>
+        <a href="." >4.2 回帰分析結果を表で出力する</a>
     </h1>
 </div>
 
@@ -296,25 +294,24 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="&#x5909;&#x6570;&#x306E;&#x6982;&#x8981;&#x3092;&#x8868;&#x793A;">&#x5909;&#x6570;&#x306E;&#x6982;&#x8981;&#x3092;&#x8868;&#x793A;</h3>
+                                <h1 id="&#x56DE;&#x5E30;&#x5206;&#x6790;&#x7D50;&#x679C;&#x3092;&#x8868;&#x3067;&#x51FA;&#x529B;&#x3059;&#x308B;">&#x56DE;&#x5E30;&#x5206;&#x6790;&#x7D50;&#x679C;&#x3092;&#x8868;&#x3067;&#x51FA;&#x529B;&#x3059;&#x308B;</h1>
+<p>&#x56DE;&#x5E30;&#x5206;&#x6790;&#x3067;&#x306F;&#x3088;&#x304F;&#x4E0B;&#x306E;&#x753B;&#x50CF;&#x306E;&#x3088;&#x3046;&#x306A;&#x8868;&#x304C;&#x5831;&#x544A;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<p><img src="https://user-images.githubusercontent.com/44024242/80790660-64432c80-8bca-11ea-8645-ef4875db97cd.png" alt="&#x56DE;&#x5E30;&#x5206;&#x6790;&#x306E;&#x8868;"></p>
+<p>&#x3053;&#x306E;&#x3088;&#x3046;&#x306A;&#x8868;&#x3092;&#x51FA;&#x529B;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x306F;<code>outreg2</code>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x4F7F;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;</p>
 <p>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#xFF1A;</p>
-<pre><code>* sum&#x306F;summarize&#x306E;&#x7565;&#x3002;summarize&#x3068;&#x3057;&#x3066;&#x3082;&#x3088;&#x3044;&#x3002;
-sum salary
-sum salary sales
-</code></pre><p>&#x7D50;&#x679C;&#xFF1A;</p>
-<pre><code>. sum salary
+<pre><code>reg salary roe, r
+outreg2 using regression.doc, replace
+reg salary roe ros, r
+outreg2 using regression.doc, append
+</code></pre><p>&#x4E0A;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3067;<code>reg salary roe, r</code>&#x3068;<code>reg salary roe ros, r</code>&#x306F;4.1&#x3067;&#x6271;&#x3063;&#x305F;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3068;&#x5168;&#x304F;&#x540C;&#x69D8;&#x306E;&#x3082;&#x306E;&#x3067;&#x3059;&#x3002;2&#x884C;&#x76EE;&#x306E;<code>outreg2 using regression.doc, replace</code>&#x3067;&#x306F;<code>regression.doc</code>&#x3068;&#x3044;&#x3046;&#x30EF;&#x30FC;&#x30C9;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;&#x306A;&#x3044;&#x5834;&#x5408;&#x306B;&#x306F;&#x65B0;&#x898F;&#x4F5C;&#x6210;&#xFF0C;&#x3042;&#x308B;&#x5834;&#x5408;&#x306B;&#x306F;&#x4E0A;&#x66F8;&#x304D;&#x3057;&#x305F;&#x4E0A;&#x3067;&#xFF0C;1&#x884C;&#x76EE;&#x306E;&#x56DE;&#x5E30;&#x5206;&#x6790;&#x306E;&#x7D50;&#x679C;&#x3092;&#x30EF;&#x30FC;&#x30C9;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x51FA;&#x529B;&#x305B;&#x3088;&#xFF0C;&#x3068;&#x3044;&#x3046;&#x3053;&#x3068;&#x3092;&#x6307;&#x793A;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x6642;&#x70B9;&#x3067;<code>regression.doc</code>&#x306B;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x51FA;&#x529B;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<p><img src="https://user-images.githubusercontent.com/44024242/80791033-61950700-8bcb-11ea-8d0f-3734fd323114.png" alt="&#x56DE;&#x5E30;&#x5206;&#x6790;&#x306E;&#x8868;1&#x3064;&#x76EE;"></p>
+<p>1&#x3064;&#x76EE;&#x306E;&#x56DE;&#x5E30;&#x5206;&#x6790;&#x306E;&#x7D50;&#x679C;&#x304C;&#x9996;&#x90FD;&#x529B;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x308F;&#x304B;&#x308A;&#x307E;&#x3059;&#x3002;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x306E;3&#x884C;&#x76EE;&#x306F;<code>regression.doc</code>&#x306B;2&#x3064;&#x76EE;&#x306E;&#x56DE;&#x5E30;&#x5206;&#x6790;&#x306E;&#x7D50;&#x679C;&#x3092;<code>append</code>&#xFF0C;&#x3064;&#x307E;&#x308A;&#x8FFD;&#x52A0;&#x305B;&#x3088;&#x3068;&#x3044;&#x3046;&#x3053;&#x3068;&#x3092;&#x547D;&#x4EE4;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;4&#x884C;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x307E;&#x3068;&#x3081;&#x3066;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3068;&#xFF0C;&#x5192;&#x982D;&#x306E;&#x3088;&#x3046;&#x306A;&#x8868;&#x304C;&#x51FA;&#x529B;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x3053;&#x306E;&#x4F8B;&#x3067;&#x306F;&#x30EF;&#x30FC;&#x30C9;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x7D50;&#x679C;&#x3092;&#x51FA;&#x529B;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x304C;&#xFF0C;<code>regression.doc</code>&#x3092;<code>regression.xls</code>&#x3084;<code>regression.txt</code>&#xFF0C;<code>regression.tex</code>&#x306A;&#x3069;&#x3068;&#x5909;&#x3048;&#x308B;&#x3053;&#x3068;&#x306B;&#x3088;&#x3063;&#x3066;&#x30A8;&#x30AF;&#x30BB;&#x30EB;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#xFF0C;&#x30C6;&#x30AD;&#x30B9;&#x30C8;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#xFF0C;TeX&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x7D50;&#x679C;&#x3092;&#x51FA;&#x529B;&#x3059;&#x308B;&#x3053;&#x3068;&#x3082;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x30A8;&#x30AF;&#x30BB;&#x30EB;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x4F8B;&#xFF1A;
+<img src="https://user-images.githubusercontent.com/44024242/80791381-6d34fd80-8bcc-11ea-963a-9b5b83dc3e92.png" alt="&#x30A8;&#x30AF;&#x30BB;&#x30EB;&#x30D5;&#x30A1;&#x30A4;&#x30EB;"></p>
+<p>&#x30C6;&#x30AD;&#x30B9;&#x30C8;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x4F8B;&#xFF1A;
+<img src="https://user-images.githubusercontent.com/44024242/80791473-b71de380-8bcc-11ea-8128-22e0aa0feb76.png" alt="&#x30C6;&#x30AD;&#x30B9;&#x30C8;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x4F8B;"></p>
 
-    Variable |        Obs        Mean    Std. Dev.       Min        Max
--------------+---------------------------------------------------------
-      salary |        209     1281.12    1372.345        223      14822
-
-. sum salary sales
-
-    Variable |        Obs        Mean    Std. Dev.       Min        Max
--------------+---------------------------------------------------------
-      salary |        209     1281.12    1372.345        223      14822
-       sales |        209    6923.793    10633.27      175.2    97649.9
-</code></pre>
                                 
                                 </section>
                             
@@ -341,14 +338,10 @@ sum salary sales
 
             
                 
-                <a href="4.html" class="navigation navigation-prev " aria-label="Previous page: 3.4 条件を満たすデータの個数の表示">
+                <a href="4-1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 4.1 基本的な回帰分析">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="6.html" class="navigation navigation-next " aria-label="Next page: 3.6 変数の概要に条件をつける">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -357,7 +350,7 @@ sum salary sales
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.5 変数の概要を表示","level":"1.3.5","depth":2,"next":{"title":"3.6 変数の概要に条件をつける","level":"1.3.6","depth":2,"path":"6.md","ref":"6.md","articles":[]},"previous":{"title":"3.4 条件を満たすデータの個数の表示","level":"1.3.4","depth":2,"path":"4.md","ref":"4.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"5.md","mtime":"2020-05-01T02:14:35.853Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-01T02:18:26.854Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.2 回帰分析結果を表で出力する","level":"1.5","depth":1,"previous":{"title":"4.1 基本的な回帰分析","level":"1.4","depth":1,"path":"4-1.md","ref":"4-1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"4-2.md","mtime":"2020-05-01T07:56:49.537Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-01T02:18:26.854Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
