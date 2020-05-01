@@ -26,4 +26,4 @@ use http://www.stata-press.com/data/r13/regress
           x3 |        148    3019.459    774.5455       1760       4840
 ```
 
-{% math %}Y = \beta_0 + \beta_1 X_1 + \beta_2 X_1^2{% endmath %}
+{% math %}(Y = \beta_0 + \beta_1 X_1 + \beta_2 X_1^2){% endmath %}
