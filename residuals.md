@@ -2,6 +2,8 @@
 
 回帰分析の残差を出力するためには`predict`コマンドと`residuals`オプションを利用します。
 
+コマンド：
+
 ```
 reg salary roe, r
 predict uhat1, residuals
