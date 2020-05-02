@@ -13,5 +13,6 @@
 * [4.1 単回帰分析・重回帰分析](simple_regression.md)
 * [4.2 残差を出力する](residuals.md)
 * [4.2 多項式・logを用いた回帰](poly.md)
-* [4.3 回帰分析結果を表で出力する](outreg2.md)
+* [4.3 複数の係数を含む仮説検定](joint_hypothesis.md)
+* [4.4 回帰分析結果を表で出力する](outreg2.md)
   
