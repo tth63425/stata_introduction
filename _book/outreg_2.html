@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>3.5 変数の概要を表示 · GitBook</title>
+        <title>5.2 回帰分析の表に追加の値を記載する · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="6.html" />
     
-    
-    <link rel="prev" href="4.html" />
+    <link rel="prev" href="probit_logit.html" />
     
 
     </head>
@@ -185,7 +183,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.5" data-path="5.html">
+        <li class="chapter " data-level="1.3.5" data-path="5.html">
             
                 <a href="5.html">
             
@@ -307,7 +305,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10" data-path="outreg_2.html">
+        <li class="chapter active" data-level="1.10" data-path="outreg_2.html">
             
                 <a href="outreg_2.html">
             
@@ -350,7 +348,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >3.5 変数の概要を表示</a>
+        <a href="." >5.2 回帰分析の表に追加の値を記載する</a>
     </h1>
 </div>
 
@@ -365,25 +363,11 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="&#x5909;&#x6570;&#x306E;&#x6982;&#x8981;&#x3092;&#x8868;&#x793A;">&#x5909;&#x6570;&#x306E;&#x6982;&#x8981;&#x3092;&#x8868;&#x793A;</h3>
+                                <h1 id="&#x56DE;&#x5E30;&#x5206;&#x6790;&#x306E;&#x8868;&#x306B;&#x8FFD;&#x52A0;&#x306E;&#x5024;&#x3092;&#x8A18;&#x8F09;&#x3059;&#x308B;">&#x56DE;&#x5E30;&#x5206;&#x6790;&#x306E;&#x8868;&#x306B;&#x8FFD;&#x52A0;&#x306E;&#x5024;&#x3092;&#x8A18;&#x8F09;&#x3059;&#x308B;</h1>
+<p>4.4&#x3067;&#x306F;&#x56DE;&#x5E30;&#x5206;&#x6790;&#x306E;&#x7D50;&#x679C;&#x3092;&#x8868;&#x306B;&#x307E;&#x3068;&#x3081;&#x308B;&#x65B9;&#x6CD5;&#x3092;&#x7D39;&#x4ECB;&#x3057;&#x307E;&#x3057;&#x305F;&#x304C;&#xFF0C;&#x3053;&#x306E;&#x8868;&#x306B;&#x306F;&#x8ABF;&#x6574;&#x6E08;&#x307F;&#x6C7A;&#x5B9A;&#x4FC2;&#x6570;&#x306F;&#x8868;&#x793A;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&#x3057;&#xFF0C;&#x4EEE;&#x8AAC;&#x691C;&#x5B9A;&#x306E;&#x7D50;&#x679C;&#x3092;&#x3053;&#x306E;&#x8868;&#x306B;&#x52A0;&#x3048;&#x305F;&#x3044;&#x5834;&#x5408;&#x3082;&#x3042;&#x308B;&#x3067;&#x3057;&#x3087;&#x3046;&#x3002;&#x3053;&#x306E;&#x5834;&#x5408;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3059;&#x3002;&#x3053;&#x3053;&#x3067;&#x4F7F;&#x7528;&#x3057;&#x3066;&#x3044;&#x308B;&#x30C7;&#x30FC;&#x30BF;&#x30BB;&#x30C3;&#x30C8;&#x306F;</p>
 <p>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#xFF1A;</p>
-<pre><code>* sum&#x306F;summarize&#x306E;&#x7565;&#x3002;summarize&#x3068;&#x3057;&#x3066;&#x3082;&#x3088;&#x3044;&#x3002;
-* salary&#x5909;&#x6570;&#xFF0C;&#x307E;&#x305F;salary&#x5909;&#x6570;&#x3068;sales&#x5909;&#x6570;&#x306E;&#x6982;&#x8981;&#x3092;&#x307E;&#x3068;&#x3081;&#x3066;&#x8868;&#x793A;
-sum salary
-sum salary sales
-</code></pre><p>&#x7D50;&#x679C;&#xFF1A;</p>
-<pre><code>. sum salary
+<pre><code>
 
-    Variable |        Obs        Mean    Std. Dev.       Min        Max
--------------+---------------------------------------------------------
-      salary |        209     1281.12    1372.345        223      14822
-
-. sum salary sales
-
-    Variable |        Obs        Mean    Std. Dev.       Min        Max
--------------+---------------------------------------------------------
-      salary |        209     1281.12    1372.345        223      14822
-       sales |        209    6923.793    10633.27      175.2    97649.9
 </code></pre>
                                 
                                 </section>
@@ -411,14 +395,10 @@ sum salary sales
 
             
                 
-                <a href="4.html" class="navigation navigation-prev " aria-label="Previous page: 3.4 条件を満たすデータの個数の表示">
+                <a href="probit_logit.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 5.1 Probit, Logitモデル">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="6.html" class="navigation navigation-next " aria-label="Next page: 3.6 変数の概要に条件をつける">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -427,7 +407,7 @@ sum salary sales
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.5 変数の概要を表示","level":"1.3.5","depth":2,"next":{"title":"3.6 変数の概要に条件をつける","level":"1.3.6","depth":2,"path":"6.md","ref":"6.md","articles":[]},"previous":{"title":"3.4 条件を満たすデータの個数の表示","level":"1.3.4","depth":2,"path":"4.md","ref":"4.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["katex","livereload"],"pluginsConfig":{"katex":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"5.md","mtime":"2020-05-01T11:18:50.887Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-03T00:16:18.106Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"5.2 回帰分析の表に追加の値を記載する","level":"1.10","depth":1,"previous":{"title":"5.1 Probit, Logitモデル","level":"1.9","depth":1,"path":"probit_logit.md","ref":"probit_logit.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["katex","livereload"],"pluginsConfig":{"katex":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"outreg_2.md","mtime":"2020-05-03T03:48:08.781Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-03T00:16:18.106Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

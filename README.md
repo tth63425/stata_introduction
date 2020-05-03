@@ -8,7 +8,7 @@
 
 # 編集のリクエスト
 
-Typoや間違いの指摘，編集の要望など大歓迎です。[GitHubでプルリクエスト](https://github.com/tth63425/stata_introduction/pulls)を出していただくか，[Google Form](https://forms.gle/BZ8aEgkqNniAa6Hb8)でお知らせください。
+Typoや間違いの指摘，編集の要望など大歓迎です。[GitHubでプルリクエスト](https://github.com/tth63425/stata_introduction/pulls)を出していただくか，[Google Form](https://forms.gle/BZ8aEgkqNniAa6Hb8)でお知らせください。疑問点がある場合もGoogle Formでお知らせください。
 
 # ライセンス
 

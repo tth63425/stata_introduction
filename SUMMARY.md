@@ -15,4 +15,6 @@
 * [4.2 多項式・logを用いた回帰](poly.md)
 * [4.3 複数の係数を含む仮説検定](joint_hypothesis.md)
 * [4.4 回帰分析結果を表で出力する](outreg2.md)
+* [5.1 Probit, Logitモデル](probit_logit.md)
+* [5.2 回帰分析の表に追加の値を記載する](outreg_2.md)
   

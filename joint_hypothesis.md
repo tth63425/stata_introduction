@@ -6,7 +6,7 @@
 use http://fmwww.bc.edu/ec-p/data/wooldridge/gpa1 
 ```
 
-でダウンロードできるデータセット使います。大学生のGPAの決定要因を調べるためのデータセットでGPAの他にも性別や学年に関する情報があります。
+でダウンロードできるデータセット[^*]使います。大学生のGPAの決定要因を調べるためのデータセットでGPAの他にも性別や学年に関する情報があります。
 
 ここでは以下のような回帰式を考えます。$$\text{sophomore}, \text{junior}, \text{senior}$$の各変数はそれぞれ該当の学年であれば1を，そうでなければ0のダミー変数です。
 
@@ -82,3 +82,6 @@ test (soph = 0.5) (junior = senior)
 ```
 
 この場合も帰無仮説を有意水準5%で棄却できません。
+
+
+[^*] Wooldridge data sets by Jeffrey M. Wooldridge from http://fmwww.bc.edu/ec-p/data/wooldridge/gpa1.des (accessed May 1, 2020).

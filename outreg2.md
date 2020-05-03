@@ -13,7 +13,7 @@
 ssc install outreg2
 ```
 
-次に回帰分析のコマンドに`outreg2`の行を以下のように加えます。
+次に回帰分析のコマンドに`outreg2`の行を以下のように加えます。ここで使用しているデータセットは3章と同じ[^*]です。
 
 コマンド：
 ```
@@ -38,3 +38,5 @@ outreg2 using regression.doc, append
 テキストファイルの例：
 
 ![テキストファイルの例](https://user-images.githubusercontent.com/44024242/80791473-b71de380-8bcc-11ea-8128-22e0aa0feb76.png)
+
+[^*] Wooldridge data sets by Jeffrey M. Wooldridge from http://fmwww.bc.edu/ec-p/data/wooldridge/ceosal1.des (accessed May 1, 2020).

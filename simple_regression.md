@@ -1,6 +1,6 @@
 # 単回帰分析
 
-単回帰分析は以下のコマンドで行えます。使用しているデータセットは3章のもの同様です。以下のコマンドではコマンドの最後に`r`が入っていますが，これは頑健性のある標準誤差(Heteroskedasticity-robust standard errors)を使用するためで，これがないと均一分散のもとでの標準誤差を使用します。
+単回帰分析は以下のコマンドで行えます。使用しているデータセット[^*]は3章のもの同様です。以下のコマンドではコマンドの最後に`r`が入っていますが，これは頑健性のある標準誤差(Heteroskedasticity-robust standard errors)を使用するためで，これがないと均一分散のもとでの標準誤差を使用します。
 
 コマンド：
 ```
@@ -60,3 +60,6 @@ Linear regression                               Number of obs     =        209
        _cons |   997.2839   131.5177     7.58   0.000     737.9907    1256.577
 ------------------------------------------------------------------------------
 ```
+
+
+[^*] Wooldridge data sets by Jeffrey M. Wooldridge from http://fmwww.bc.edu/ec-p/data/wooldridge/datasets.list.html (accessed May 1, 2020).

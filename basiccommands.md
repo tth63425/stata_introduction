@@ -28,7 +28,7 @@ log using stataoutput, replace
 use http://fmwww.bc.edu/ec-p/data/wooldridge/ceosal1
 ```
 
-上はStataでデータセットをロードするまでのDoファイルの一例です。`*`で始まる行，または`/* */`で挟まれた部分はコメントです。コメントが1行の時は`*`を，複数行にまたがる時は`/* */`を使います。
+上はStataでデータセット[^*]をロードするまでのDoファイルの一例です。`*`で始まる行，または`/* */`で挟まれた部分はコメントです。コメントが1行の時は`*`を，複数行にまたがる時は`/* */`を使います。
 
 データセットがロードされると，Stataでエクセルと似た形式でデータを見ることができます。"Data"の部分をクリックしてみましょう。
 
@@ -70,3 +70,6 @@ hist salary
 scatter salary sales
 
 ```
+
+
+[^*] Wooldridge data sets by Jeffrey M. Wooldridge from http://fmwww.bc.edu/ec-p/data/wooldridge/datasets.list.html (accessed May 1, 2020).

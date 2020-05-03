@@ -1,6 +1,6 @@
 # 多項式を用いた回帰
 
-ここでは多項式回帰とlogを用いた回帰分析の方法について紹介します。以下では`use http://www.stata-press.com/data/r13/regress`で得られるデータセットを用いていきます。Doファイルの最初の部分は以下のように変わります。
+ここでは多項式回帰とlogを用いた回帰分析の方法について紹介します。以下では`use http://www.stata-press.com/data/r13/regress`で得られるデータセット[^*]を用います。Doファイルの最初の部分は以下のように変わります。
 
 Doファイルの最初の部分：
 ```
@@ -149,3 +149,5 @@ $$\log$$を用いた分析ではデータに0が含まれる場合はStataは自
 3. rankを利用する
 
 などがありますが，2はどのような値を加えるかによって大きく結果が異なることに注意しましょう。
+
+[^*] Datasets for Stata User's Guide, Release 13, Chapter 20 - Estimation and postestimation commands by Stata Press from https://www.stata-press.com/data/r13/u.html (accessed May 1, 2020).

@@ -61,6 +61,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="probit_logit.html" />
+    
     
     <link rel="prev" href="joint_hypothesis.html" />
     
@@ -292,6 +294,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.9" data-path="probit_logit.html">
+            
+                <a href="probit_logit.html">
+            
+                    
+                    5.1 Probit, Logitモデル
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="outreg_2.html">
+            
+                <a href="outreg_2.html">
+            
+                    
+                    5.2 回帰分析の表に追加の値を記載する
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -344,7 +372,7 @@
 <p>&#x307E;&#x305A;&#xFF0C;<code>outreg2</code>&#x3092;&#x4EE5;&#x4E0B;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;Command&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;&#x306B;&#x5165;&#x529B;&#x3057;&#x3066;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3057;&#x307E;&#x3059;&#x3002;</p>
 <p>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#xFF1A;</p>
 <pre><code>ssc install outreg2
-</code></pre><p>&#x6B21;&#x306B;&#x56DE;&#x5E30;&#x5206;&#x6790;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x306B;<code>outreg2</code>&#x306E;&#x884C;&#x3092;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x52A0;&#x3048;&#x307E;&#x3059;&#x3002;</p>
+</code></pre><p>&#x6B21;&#x306B;&#x56DE;&#x5E30;&#x5206;&#x6790;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x306B;<code>outreg2</code>&#x306E;&#x884C;&#x3092;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x52A0;&#x3048;&#x307E;&#x3059;&#x3002;&#x3053;&#x3053;&#x3067;&#x4F7F;&#x7528;&#x3057;&#x3066;&#x3044;&#x308B;&#x30C7;&#x30FC;&#x30BF;&#x30BB;&#x30C3;&#x30C8;&#x306F;3&#x7AE0;&#x3068;&#x540C;&#x3058;<sup><a href="#fn_*" id="reffn_*">*</a></sup>&#x3067;&#x3059;&#x3002;</p>
 <p>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#xFF1A;</p>
 <pre><code>reg salary roe, r
 outreg2 using regression.doc, replace
@@ -358,6 +386,7 @@ outreg2 using regression.doc, append
 <p><img src="https://user-images.githubusercontent.com/44024242/80791381-6d34fd80-8bcc-11ea-963a-9b5b83dc3e92.png" alt="&#x30A8;&#x30AF;&#x30BB;&#x30EB;&#x30D5;&#x30A1;&#x30A4;&#x30EB;"></p>
 <p>&#x30C6;&#x30AD;&#x30B9;&#x30C8;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x4F8B;&#xFF1A;</p>
 <p><img src="https://user-images.githubusercontent.com/44024242/80791473-b71de380-8bcc-11ea-8128-22e0aa0feb76.png" alt="&#x30C6;&#x30AD;&#x30B9;&#x30C8;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x4F8B;"></p>
+<p><sup><a href="#fn_*" id="reffn_*">*</a></sup> Wooldridge data sets by Jeffrey M. Wooldridge from <a href="http://fmwww.bc.edu/ec-p/data/wooldridge/ceosal1.des" target="_blank">http://fmwww.bc.edu/ec-p/data/wooldridge/ceosal1.des</a> (accessed May 1, 2020).</p>
 
                                 
                                 </section>
@@ -385,10 +414,14 @@ outreg2 using regression.doc, append
 
             
                 
-                <a href="joint_hypothesis.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 4.3 複数の係数を含む仮説検定">
+                <a href="joint_hypothesis.html" class="navigation navigation-prev " aria-label="Previous page: 4.3 複数の係数を含む仮説検定">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="probit_logit.html" class="navigation navigation-next " aria-label="Next page: 5.1 Probit, Logitモデル">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -397,7 +430,7 @@ outreg2 using regression.doc, append
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.4 回帰分析結果を表で出力する","level":"1.8","depth":1,"previous":{"title":"4.3 複数の係数を含む仮説検定","level":"1.7","depth":1,"path":"joint_hypothesis.md","ref":"joint_hypothesis.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["katex"],"pluginsConfig":{"katex":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"outreg2.md","mtime":"2020-05-01T13:10:46.316Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-02T15:07:45.707Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.4 回帰分析結果を表で出力する","level":"1.8","depth":1,"next":{"title":"5.1 Probit, Logitモデル","level":"1.9","depth":1,"path":"probit_logit.md","ref":"probit_logit.md","articles":[]},"previous":{"title":"4.3 複数の係数を含む仮説検定","level":"1.7","depth":1,"path":"joint_hypothesis.md","ref":"joint_hypothesis.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["katex","livereload"],"pluginsConfig":{"katex":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"outreg2.md","mtime":"2020-05-03T01:18:13.389Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-03T00:16:18.106Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -405,6 +438,10 @@ outreg2 using regression.doc, append
         
     <script src="gitbook/gitbook.js"></script>
     <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
     
         
         <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
