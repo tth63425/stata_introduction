@@ -294,6 +294,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.9" data-path="probit_logit.html">
+            
+                <a href="probit_logit.html">
+            
+                    
+                    5.1 Probit, Logitモデル
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="outreg_2.html">
+            
+                <a href="outreg_2.html">
+            
+                    
+                    5.2 回帰分析の表に追加の値を記載する
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -342,7 +368,7 @@
                                 <h1 id="&#x8907;&#x6570;&#x306E;&#x4FC2;&#x6570;&#x3092;&#x542B;&#x3080;&#x4EEE;&#x8AAC;&#x691C;&#x5B9A;">&#x8907;&#x6570;&#x306E;&#x4FC2;&#x6570;&#x3092;&#x542B;&#x3080;&#x4EEE;&#x8AAC;&#x691C;&#x5B9A;</h1>
 <p>&#x3053;&#x3053;&#x3067;&#x306F;&#xFF0C;&#x8907;&#x6570;&#x306E;&#x4FC2;&#x6570;&#x3092;&#x542B;&#x3080;&#x4EEE;&#x8AAC;&#x691C;&#x5B9A;&#x3092;&#x3069;&#x306E;&#x3088;&#x3046;&#x306B;Stata&#x3067;&#x884C;&#x3046;&#x304B;&#x3092;&#x7D39;&#x4ECB;&#x3057;&#x307E;&#x3059;&#x3002;&#x3053;&#x3053;&#x3067;&#x306F;</p>
 <pre><code>use http://fmwww.bc.edu/ec-p/data/wooldridge/gpa1
-</code></pre><p>&#x3067;&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9;&#x3067;&#x304D;&#x308B;&#x30C7;&#x30FC;&#x30BF;&#x30BB;&#x30C3;&#x30C8;&#x4F7F;&#x3044;&#x307E;&#x3059;&#x3002;&#x5927;&#x5B66;&#x751F;&#x306E;GPA&#x306E;&#x6C7A;&#x5B9A;&#x8981;&#x56E0;&#x3092;&#x8ABF;&#x3079;&#x308B;&#x305F;&#x3081;&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x30BB;&#x30C3;&#x30C8;&#x3067;GPA&#x306E;&#x4ED6;&#x306B;&#x3082;&#x6027;&#x5225;&#x3084;&#x5B66;&#x5E74;&#x306B;&#x95A2;&#x3059;&#x308B;&#x60C5;&#x5831;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+</code></pre><p>&#x3067;&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9;&#x3067;&#x304D;&#x308B;&#x30C7;&#x30FC;&#x30BF;&#x30BB;&#x30C3;&#x30C8;<sup><a href="#fn_*" id="reffn_*">*</a></sup>&#x4F7F;&#x3044;&#x307E;&#x3059;&#x3002;&#x5927;&#x5B66;&#x751F;&#x306E;GPA&#x306E;&#x6C7A;&#x5B9A;&#x8981;&#x56E0;&#x3092;&#x8ABF;&#x3079;&#x308B;&#x305F;&#x3081;&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x30BB;&#x30C3;&#x30C8;&#x3067;GPA&#x306E;&#x4ED6;&#x306B;&#x3082;&#x6027;&#x5225;&#x3084;&#x5B66;&#x5E74;&#x306B;&#x95A2;&#x3059;&#x308B;&#x60C5;&#x5831;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
 <p>&#x3053;&#x3053;&#x3067;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306A;&#x56DE;&#x5E30;&#x5F0F;&#x3092;&#x8003;&#x3048;&#x307E;&#x3059;&#x3002;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext><mi mathvariant="normal">s</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mtext><mo separator="true">,</mo><mtext><mi mathvariant="normal">j</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi></mtext><mo separator="true">,</mo><mtext><mi mathvariant="normal">s</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi></mtext></mrow><annotation encoding="application/x-tex">\text{sophomore}, \text{junior}, \text{senior}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord text textstyle uncramped"><span class="mord mathrm">sophomore</span></span><span class="mpunct">,</span><span class="mord text textstyle uncramped"><span class="mord mathrm">junior</span></span><span class="mpunct">,</span><span class="mord text textstyle uncramped"><span class="mord mathrm">senior</span></span></span></span></span>&#x306E;&#x5404;&#x5909;&#x6570;&#x306F;&#x305D;&#x308C;&#x305E;&#x308C;&#x8A72;&#x5F53;&#x306E;&#x5B66;&#x5E74;&#x3067;&#x3042;&#x308C;&#x3070;1&#x3092;&#xFF0C;&#x305D;&#x3046;&#x3067;&#x306A;&#x3051;&#x308C;&#x3070;0&#x306E;&#x30C0;&#x30DF;&#x30FC;&#x5909;&#x6570;&#x3067;&#x3059;&#x3002;</p>
 <p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mtext><mi mathvariant="normal">G</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">A</mi></mtext><mi>i</mi></msub><mo>=</mo><msub><mi>&#x3B2;</mi><mn>0</mn></msub><mo>+</mo><msub><mi>&#x3B2;</mi><mn>1</mn></msub><msub><mtext><mi mathvariant="normal">s</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mtext><mi>i</mi></msub><mo>+</mo><msub><mi>&#x3B2;</mi><mn>2</mn></msub><msub><mtext><mi mathvariant="normal">j</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi></mtext><mi>i</mi></msub><mo>+</mo><msub><mi>&#x3B2;</mi><mn>3</mn></msub><msub><mtext><mi mathvariant="normal">s</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi></mtext><mi>i</mi></msub><mo>+</mo><msub><mi>u</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">
 \text{GPA}_i = \beta_0 + \beta_1 \text{sophomore}_i + \beta_2 \text{junior}_i + \beta_3 \text{senior}_i + u_i
@@ -393,6 +419,7 @@ Linear regression                               Number of obs     =        141
        F(  2,   137) =    1.08
             Prob &gt; F =    0.3429
 </code></pre><p>&#x3053;&#x306E;&#x5834;&#x5408;&#x3082;&#x5E30;&#x7121;&#x4EEE;&#x8AAC;&#x3092;&#x6709;&#x610F;&#x6C34;&#x6E96;5%&#x3067;&#x68C4;&#x5374;&#x3067;&#x304D;&#x307E;&#x305B;&#x3093;&#x3002;</p>
+<p><sup><a href="#fn_*" id="reffn_*">*</a></sup> Wooldridge data sets by Jeffrey M. Wooldridge from <a href="http://fmwww.bc.edu/ec-p/data/wooldridge/gpa1.des" target="_blank">http://fmwww.bc.edu/ec-p/data/wooldridge/gpa1.des</a> (accessed May 1, 2020).</p>
 
                                 
                                 </section>
@@ -436,7 +463,7 @@ Linear regression                               Number of obs     =        141
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.3 複数の係数を含む仮説検定","level":"1.7","depth":1,"next":{"title":"4.4 回帰分析結果を表で出力する","level":"1.8","depth":1,"path":"outreg2.md","ref":"outreg2.md","articles":[]},"previous":{"title":"4.2 多項式・logを用いた回帰","level":"1.6","depth":1,"path":"poly.md","ref":"poly.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["katex"],"pluginsConfig":{"katex":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"joint_hypothesis.md","mtime":"2020-05-01T14:02:07.102Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-02T15:07:45.707Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.3 複数の係数を含む仮説検定","level":"1.7","depth":1,"next":{"title":"4.4 回帰分析結果を表で出力する","level":"1.8","depth":1,"path":"outreg2.md","ref":"outreg2.md","articles":[]},"previous":{"title":"4.2 多項式・logを用いた回帰","level":"1.6","depth":1,"path":"poly.md","ref":"poly.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["katex","livereload"],"pluginsConfig":{"katex":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"joint_hypothesis.md","mtime":"2020-05-03T00:58:04.187Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-03T00:16:18.106Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -444,6 +471,10 @@ Linear regression                               Number of obs     =        141
         
     <script src="gitbook/gitbook.js"></script>
     <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
     
         
         <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
