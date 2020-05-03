@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>5.1 単回帰分析・重回帰分析 · GitBook</title>
+        <title>7. 回帰不連続デザイン（シャープ） · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="residuals.html" />
     
-    
-    <link rel="prev" href="pdf.html" />
+    <link rel="prev" href="outreg_2.html" />
     
 
     </head>
@@ -242,7 +240,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5" data-path="simple_regression.html">
+        <li class="chapter " data-level="1.5" data-path="simple_regression.html">
             
                 <a href="simple_regression.html">
             
@@ -333,7 +331,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.12" data-path="RDD_sharp.html">
+        <li class="chapter active" data-level="1.12" data-path="RDD_sharp.html">
             
                 <a href="RDD_sharp.html">
             
@@ -376,7 +374,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >5.1 単回帰分析・重回帰分析</a>
+        <a href="." >7. 回帰不連続デザイン（シャープ）</a>
     </h1>
 </div>
 
@@ -391,55 +389,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x5358;&#x56DE;&#x5E30;&#x5206;&#x6790;">&#x5358;&#x56DE;&#x5E30;&#x5206;&#x6790;</h1>
-<p>&#x5358;&#x56DE;&#x5E30;&#x5206;&#x6790;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3067;&#x884C;&#x3048;&#x307E;&#x3059;&#x3002;&#x4F7F;&#x7528;&#x3057;&#x3066;&#x3044;&#x308B;&#x30C7;&#x30FC;&#x30BF;&#x30BB;&#x30C3;&#x30C8;<sup><a href="#fn_*" id="reffn_*">*</a></sup>&#x306F;3&#x7AE0;&#x306E;&#x3082;&#x306E;&#x540C;&#x69D8;&#x3067;&#x3059;&#x3002;&#x4EE5;&#x4E0B;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3067;&#x306F;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x306E;&#x6700;&#x5F8C;&#x306B;<code>r</code>&#x304C;&#x5165;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x304C;&#xFF0C;&#x3053;&#x308C;&#x306F;&#x9811;&#x5065;&#x6027;&#x306E;&#x3042;&#x308B;&#x6A19;&#x6E96;&#x8AA4;&#x5DEE;(Heteroskedasticity-robust standard errors)&#x3092;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x305F;&#x3081;&#x3067;&#xFF0C;&#x3053;&#x308C;&#x304C;&#x306A;&#x3044;&#x3068;&#x5747;&#x4E00;&#x5206;&#x6563;&#x306E;&#x3082;&#x3068;&#x3067;&#x306E;&#x6A19;&#x6E96;&#x8AA4;&#x5DEE;&#x3092;&#x4F7F;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;</p>
-<p>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#xFF1A;</p>
-<pre><code>* &#x88AB;&#x8AAC;&#x660E;&#x5909;&#x6570;&#x306F;salary, &#x8AAC;&#x660E;&#x5909;&#x6570;&#x304C;roe
-* reg&#x306F;regress&#x3092;&#x7565;&#x3057;&#x305F;&#x3082;&#x306E;&#x3002;regress&#x3068;&#x3057;&#x3066;&#x3082;&#x3088;&#x3044;&#x3002;
-* &#x6700;&#x5F8C;&#x306E;r&#x306F;robust&#x3092;&#x7701;&#x7565;&#x3057;&#x305F;&#x3082;&#x306E;&#x3002;robust&#x3068;&#x3057;&#x3066;&#x3082;&#x3088;&#x3044;&#x3002;
-* reg &#x8AAC;&#x660E;&#x5909;&#x6570;&#x3000;&#x88AB;&#x8AAC;&#x660E;&#x5909;&#x6570;&#x3000;&#x306E;&#x9806;&#x3067;&#x66F8;&#x304F;&#x3002;
-
-reg salary roe, r
-</code></pre><p>&#x7D50;&#x679C;&#xFF1A;</p>
-<pre><code>. reg salary roe, r
-
-Linear regression                               Number of obs     =        209
-                                                F(1, 207)         =       7.34
-                                                Prob &gt; F          =     0.0073
-                                                R-squared         =     0.0132
-                                                Root MSE          =     1366.6
-
-------------------------------------------------------------------------------
-             |               Robust
-      salary |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
--------------+----------------------------------------------------------------
-         roe |   18.50119   6.829448     2.71   0.007     5.036994    31.96538
-       _cons |   963.1913   121.1062     7.95   0.000     724.4316    1201.951
-------------------------------------------------------------------------------
-</code></pre><h1 id="&#x91CD;&#x56DE;&#x5E30;&#x5206;&#x6790;">&#x91CD;&#x56DE;&#x5E30;&#x5206;&#x6790;</h1>
-<p>&#x91CD;&#x56DE;&#x5E30;&#x5206;&#x6790;&#x306B;&#x3064;&#x3044;&#x3066;&#x3082;&#x57FA;&#x672C;&#x7684;&#x306B;&#x306F;&#x5358;&#x56DE;&#x5E30;&#x5206;&#x6790;&#x3068;&#x540C;&#x3058;&#x3067;&#x3059;&#x3002;</p>
-<p>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#xFF1A;</p>
-<pre><code>* reg &#x88AB;&#x8AAC;&#x660E;&#x5909;&#x6570; 1&#x3064;&#x76EE;&#x306E;&#x8AAC;&#x660E;&#x5909;&#x6570; 2&#x3064;&#x76EE;&#x306E;&#x8AAC;&#x660E;&#x5909;&#x6570;&#x3000;..., r &#x306E;&#x3088;&#x3046;&#x66F8;&#x304F;
-reg salary roe ros, r
-</code></pre><p>&#x7D50;&#x679C;&#xFF1A;</p>
-<pre><code>. reg salary roe ros, r
-
-Linear regression                               Number of obs     =        209
-                                                F(2, 206)         =       4.37
-                                                Prob &gt; F          =     0.0138
-                                                R-squared         =     0.0178
-                                                Root MSE          =     1366.7
-
-------------------------------------------------------------------------------
-             |               Robust
-      salary |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
--------------+----------------------------------------------------------------
-         roe |   21.62757   7.409501     2.92   0.004     7.019396    36.23575
-         ros |    -1.4209   .9266429    -1.53   0.127     -3.24782    .4060199
-       _cons |   997.2839   131.5177     7.58   0.000     737.9907    1256.577
-------------------------------------------------------------------------------
-</code></pre><p><sup><a href="#fn_*" id="reffn_*">*</a></sup> Wooldridge data sets by Jeffrey M. Wooldridge from <a href="http://fmwww.bc.edu/ec-p/data/wooldridge/datasets.list.html" target="_blank">http://fmwww.bc.edu/ec-p/data/wooldridge/datasets.list.html</a> (accessed May 1, 2020).</p>
-
+                                
                                 
                                 </section>
                             
@@ -466,14 +416,10 @@ Linear regression                               Number of obs     =        209
 
             
                 
-                <a href="pdf.html" class="navigation navigation-prev " aria-label="Previous page: 4. 仮説検定の1.96はどこからくるのか">
+                <a href="outreg_2.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 6.2 回帰分析の表に追加の値を記載する">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="residuals.html" class="navigation navigation-next " aria-label="Next page: 5.2 残差を出力する">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -482,7 +428,7 @@ Linear regression                               Number of obs     =        209
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"5.1 単回帰分析・重回帰分析","level":"1.5","depth":1,"next":{"title":"5.2 残差を出力する","level":"1.6","depth":1,"path":"residuals.md","ref":"residuals.md","articles":[]},"previous":{"title":"4. 仮説検定の1.96はどこからくるのか","level":"1.4","depth":1,"path":"pdf.md","ref":"pdf.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["katex"],"pluginsConfig":{"katex":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"simple_regression.md","mtime":"2020-05-03T01:28:04.138Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-03T16:07:28.445Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"7. 回帰不連続デザイン（シャープ）","level":"1.12","depth":1,"previous":{"title":"6.2 回帰分析の表に追加の値を記載する","level":"1.11","depth":1,"path":"outreg_2.md","ref":"outreg_2.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["katex"],"pluginsConfig":{"katex":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"RDD_sharp.md","mtime":"2020-05-03T16:06:45.999Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-03T16:07:28.445Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
