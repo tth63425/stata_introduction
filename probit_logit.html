@@ -505,6 +505,27 @@ Log pseudolikelihood = -240.17199               Pseudo R2         =     0.0393
 <p>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#xFF1A;</p>
 <pre><code>nlcom normal(_b[_cons] + _b[gpa] * 4 + _b[gre] * 790) - normal(_b[_cons] + _b[gpa] * 3.5 + _b[gre] * 750)
 </code></pre><p>&#x3068;&#x3059;&#x308C;&#x3070;Probit&#x56DE;&#x5E30;&#x306E;&#x5834;&#x5408;&#x306E;&#x78BA;&#x7387;&#x306E;&#x5DEE;&#x3092;&#x6C42;&#x3081;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<h3 id="&#x8A08;&#x7B97;&#x3055;&#x308C;&#x305F;&#x78BA;&#x7387;&#x306E;&#x5DEE;&#x3084;&#x6A19;&#x6E96;&#x504F;&#x5DEE;&#x3092;&#x4FDD;&#x5B58;&#x3059;&#x308B;">&#x8A08;&#x7B97;&#x3055;&#x308C;&#x305F;&#x78BA;&#x7387;&#x306E;&#x5DEE;&#x3084;&#x6A19;&#x6E96;&#x504F;&#x5DEE;&#x3092;&#x4FDD;&#x5B58;&#x3059;&#x308B;</h3>
+<p>&#x4E0A;&#x8A18;&#x5206;&#x6790;&#xFF08;&#x4F8B;&#x3068;&#x3057;&#x3066;Logit&#x5206;&#x6790;&#x306E;&#x5834;&#x5408;&#x3092;&#x8003;&#x3048;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#xFF09;&#x3067;&#x78BA;&#x7387;&#x306E;&#x5DEE;&#x306F;0.1205851&#xFF0C;&#x305D;&#x306E;&#x6A19;&#x6E96;&#x504F;&#x5DEE;&#x306F;0.0383848&#x3068;&#x306A;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x304C;&#xFF0C;&#x3053;&#x308C;&#x3092;&#x4FDD;&#x5B58;&#x3059;&#x308B;&#x306B;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#xFF1A;</p>
+<pre><code>logit admit gpa gre, r
+* &#x6700;&#x5F8C;&#x306B;, post&#x304C;&#x4ED8;&#x3044;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x306B;&#x6CE8;&#x610F;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;
+nlcom logistic(_b[_cons] + _b[gpa] * 4 + _b[gre] * 790) - logistic(_b[_cons] + _b[gpa] * 3.5 + _b[gre] * 750), post
+* dif&#x3068;&#x3044;&#x3046;&#x5909;&#x6570;&#x306B;&#x78BA;&#x7387;&#x306E;&#x5DEE;&#x3092;&#x4FDD;&#x5B58;
+local dif = _b[_nl_1]
+* ste&#x3068;&#x3044;&#x3046;&#x5909;&#x6570;&#x306B;&#x305D;&#x306E;&#x6A19;&#x6E96;&#x504F;&#x5DEE;&#x3092;&#x4FDD;&#x5B58;
+local ste = _se[_nl_1]
+* dif&#x306E;&#x5024;&#x3092;&#x8868;&#x793A;
+dis `dif&apos;
+* ste&#x306E;&#x5024;&#x3092;&#x8868;&#x793A;
+dis `ste&apos;
+</code></pre><p>&#x7D50;&#x679C;&#xFF08;<code>dis</code>&#x3092;&#x4F7F;&#x3063;&#x305F;&#x6700;&#x5F8C;&#x306E;2&#x884C;&#x306B;&#x3064;&#x3044;&#x3066;&#x306E;&#x307F;&#x793A;&#x3057;&#x307E;&#x3059;&#xFF09;&#xFF1A;</p>
+<pre><code>. dis `dif&apos;
+.12058512
+
+. dis `ste&apos;
+.03838478
+</code></pre><p>&#x304D;&#x3061;&#x3093;&#x3068;<code>dif</code>&#x3068;<code>ste</code>&#x306B;&#x78BA;&#x7387;&#x306E;&#x5DEE;&#x3068;&#x305D;&#x306E;&#x6A19;&#x6E96;&#x504F;&#x5DEE;&#x304C;&#x4FDD;&#x5B58;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x308F;&#x304B;&#x308A;&#x307E;&#x3057;&#x305F;&#x3002;&#x3053;&#x306E;<code>dif</code>&#x3068;<code>ste</code>&#x306F;&#x56DE;&#x5E30;&#x5206;&#x6790;&#x306E;&#x7D50;&#x679C;&#x3092;&#x307E;&#x3068;&#x3081;&#x305F;&#x8868;&#xFF08;<code>outreg2</code>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#xFF09;&#x306B;&#x52A0;&#x3048;&#x308B;&#x3053;&#x3068;&#x3082;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;6.2&#x3092;&#x53C2;&#x7167;&#x3057;&#x3066;&#x30C8;&#x30E9;&#x30A4;&#x3057;&#x3066;&#x307F;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
 <p><sup><a href="#fn_*" id="reffn_*">*</a></sup> PROBIT REGRESSION | STATA ANNOTATED OUTPUT. UCLA: Statistical Consulting Group. from <a href="https://stats.idre.ucla.edu/stata/output/probit-regression/" target="_blank">https://stats.idre.ucla.edu/stata/output/probit-regression/</a> (accessed May 3, 2020).</p>
 
                                 
@@ -549,7 +570,7 @@ Log pseudolikelihood = -240.17199               Pseudo R2         =     0.0393
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"6.1 Probit, Logitモデル","level":"1.10","depth":1,"next":{"title":"6.2 回帰分析の表に追加の値を記載する","level":"1.11","depth":1,"path":"outreg_2.md","ref":"outreg_2.md","articles":[]},"previous":{"title":"5.4 回帰分析結果を表で出力する","level":"1.9","depth":1,"path":"outreg2.md","ref":"outreg2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["katex"],"pluginsConfig":{"katex":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"probit_logit.md","mtime":"2020-05-03T15:33:09.155Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-04T01:09:39.482Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"6.1 Probit, Logitモデル","level":"1.10","depth":1,"next":{"title":"6.2 回帰分析の表に追加の値を記載する","level":"1.11","depth":1,"path":"outreg_2.md","ref":"outreg_2.md","articles":[]},"previous":{"title":"5.4 回帰分析結果を表で出力する","level":"1.9","depth":1,"path":"outreg2.md","ref":"outreg2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["katex"],"pluginsConfig":{"katex":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"probit_logit.md","mtime":"2020-05-04T11:45:07.744Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-04T11:45:23.297Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
