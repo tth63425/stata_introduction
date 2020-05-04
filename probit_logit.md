@@ -188,4 +188,34 @@ nlcom normal(_b[_cons] + _b[gpa] * 4 + _b[gre] * 790) - normal(_b[_cons] + _b[gp
 
 とすればProbit回帰の場合の確率の差を求めることができます。
 
+### 計算された確率の差や標準偏差を保存する
+
+上記分析（例としてLogit分析の場合を考えてみましょう）で確率の差は0.1205851，その標準偏差は0.0383848となっていますが，これを保存するには以下のようにします。
+
+コマンド：
+```
+logit admit gpa gre, r
+* 最後に, postが付いていることに注意してください
+nlcom logistic(_b[_cons] + _b[gpa] * 4 + _b[gre] * 790) - logistic(_b[_cons] + _b[gpa] * 3.5 + _b[gre] * 750), post
+* difという変数に確率の差を保存
+local dif = _b[_nl_1]
+* steという変数にその標準偏差を保存
+local ste = _se[_nl_1]
+* difの値を表示
+dis `dif'
+* steの値を表示
+dis `ste'
+```
+
+結果（`dis`を使った最後の2行についてのみ示します）：
+```
+. dis `dif'
+.12058512
+
+. dis `ste'
+.03838478
+```
+
+きちんと`dif`と`ste`に確率の差とその標準偏差が保存されていることがわかりました。この`dif`と`ste`は回帰分析の結果をまとめた表（`outreg2`コマンド）に加えることもできます。6.2を参照してトライしてみてください。
+
 [^*] PROBIT REGRESSION | STATA ANNOTATED OUTPUT. UCLA: Statistical Consulting Group. from https://stats.idre.ucla.edu/stata/output/probit-regression/ (accessed May 3, 2020).
