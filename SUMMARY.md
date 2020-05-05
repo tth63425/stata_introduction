@@ -18,4 +18,5 @@
 * [5.4 回帰分析結果を表で出力する](outreg2.md)
 * [6.1 Probit, Logitモデル](probit_logit.md)
 * [6.2 回帰分析の表に追加の値を記載する](outreg_2.md)
+* [7.1 Binned Scatter Plot](binscatplot.md)
   
