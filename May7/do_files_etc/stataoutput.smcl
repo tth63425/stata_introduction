@@ -1,0 +1,16 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/akirasato/Docs/Okamuro_Seminar/stata_introduction/stataoutput.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res} 6 May 2020, 23:28:25
+{txt}
+{com}. 
+. 
+. 
+. use http://fmwww.bc.edu/ec-p/data/wooldridge/gpa1
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. 

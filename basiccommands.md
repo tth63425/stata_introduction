@@ -18,7 +18,7 @@ capture log close
 cd "/Users/akirasato/Docs/Okamuro_Seminar/stata_introduction"
 
 /*
-Stataの結果が全て保存されるlogファイルを作成する（stataoutput.logというファイル名）
+Stataの結果が全て保存されるlogファイルを作成する（stataoutput.smclというファイル名）
 replaceはファイルがない場合は新規作成，ある場合は上書きすることを表します。
 */
 log using stataoutput, replace
