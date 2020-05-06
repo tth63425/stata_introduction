@@ -14,7 +14,7 @@ $$
 ただし，$$\Phi()$$は正規分布関数です。
 
 $$
-\Phi(z) = (2\pi)^{\frac{1}{2}} \int_{-\infty}^{z} \exp \left(-\frac{x^2}{2}\right) dx
+\Phi(z) = (2\pi)^{-\frac{1}{2}} \int_{-\infty}^{z} \exp \left(-\frac{x^2}{2}\right) dx
 $$
 
 このProbitモデルの分析をStataで行うためには以下のようにします。ここでは`use https://stats.idre.ucla.edu/stat/stata/dae/logit.dta`でダウンロードできるデータセット[^*]を用います。このデータは大学院を志望する大学生のGPA（`gpa`）， GREスコア（`gre`），トップスクールであるかどうか（`topnotch`変数），大学院への入学が許可されたどうかに関する変数（`admit`）が含まれています。
