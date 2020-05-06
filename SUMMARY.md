@@ -1,5 +1,6 @@
 # Summary
 
+* [5月7日のための仮ページ](may7.md)
 * [1. Stataイントロダクション](README.md)
 * [2. Stataユーザインターフェイスの説明](ui.md)
 * [3. Stataの基本的なコマンド](basiccommands.md)
