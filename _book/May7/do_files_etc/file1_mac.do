@@ -34,13 +34,12 @@ summarize
 * ヒストグラムを表示する
 hist sat
 * 保存しましょう（pngで）
-graph export hist1.png, replace
-
+graph export hist1.png
 
 * 散布図を表示する
 scatter colgpa sat
 * 保存しましょう
-graph export scat2.png, replace
+graph export scat1.png
 
 
 * ------------------------------------------------------------------------------
