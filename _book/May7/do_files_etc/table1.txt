@@ -1,0 +1,17 @@
+	(1)	(2)	(3)
+VARIABLES	admit	admit	admit
+			
+gpa	0.154**	0.455**	0.755**
+	(0.0670)	(0.197)	(0.334)
+gre	0.000549**	0.00164**	0.00269**
+	(0.000214)	(0.000640)	(0.00107)
+Constant	-0.528***	-3.004***	-4.949***
+	(0.199)	(0.636)	(1.075)
+			
+Observations	400	400	400
+R-squared	0.048		
+F-value	5.302		
+p-value	0.0218		
+Predicted Effect	0.424	0.428	0.428
+Robust standard errors in parentheses			
+*** p<0.01, ** p<0.05, * p<0.1			

@@ -10,5 +10,7 @@ Constant	0.663***	0.704***
 		
 Observations	4,137	4,137
 R-squared	0.167	0.170
+F-value	881	892.3
+p-value	0	0
 Robust standard errors in parentheses		
 *** p<0.01, ** p<0.05, * p<0.1		

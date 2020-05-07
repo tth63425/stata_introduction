@@ -50,30 +50,3 @@ reg colgpa sat, r
 
 reg colgpa sat hsize, r
 
-
-* -----------------------------------------------------------------------------
-
-reg colgpa sat, r
-
-outreg2 using table1.doc, replace
-
-reg colgpa sat hsize, r
-
-outreg2 using table1.doc, append
-
-* ------------------------------------------------------------------------------
-
-reg colgpa sat, r
-test sat
-local F1 = r(F)
-local P1 = r(p)
-outreg2 using table2.doc, adds(F-value, `F1', p-value, `P1') replace
-
-reg colgpa sat hsize, r
-test sat
-local F2 = r(F)
-local P2 = r(p)
-outreg2 using table2.doc, adds(F-value, `F2', p-value, `P2') append
-
-* ------------------------------------------------------------------------------
-
