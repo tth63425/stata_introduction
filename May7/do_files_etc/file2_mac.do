@@ -11,7 +11,7 @@ cd "/Users/akirasato/Docs/stata_introduction/May7/do_files_etc"
 Stataの結果が全て保存されるlogファイルを作成する（stataoutput.smclというファイル名）
 replaceはファイルがない場合は新規作成，ある場合は上書きすることを表します。
 */
-log using stataoutput, replace
+log using stataoutput2, replace
 
 * 使うデータセットをダウンロードする
 * 途中から緑になってるけど，大丈夫。
@@ -31,8 +31,8 @@ graph export hist2.png, replace
 
 * 散布図を表示する
 scatter expenditure income
-* 保存しましょう（今度は...jpgで）
-graph export scat1.jpg, replace
+* 保存しましょう
+graph export scat1.png, replace
 
 reg expenditure income, r
 

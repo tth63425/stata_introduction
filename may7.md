@@ -67,12 +67,12 @@ use http://fmwww.bc.edu/ec-p/data/wooldridge/gpa2
 
 
 
+#### 5. データの概要とかヒストグラムとか
+
 - 試しにいくつかコマンド書いてみましょう（Doファイルの保存・一部のみ実行）
  - 何人分のデータがありますか？（おご）
  - SATの平均点どのくらいですか？（いり）
  - 高校のサイズの平均は？（かね）
-
-#### 5. データの概要とかヒストグラムとか
 
 Doファイルの続き：
 ```
@@ -88,8 +88,8 @@ graph export hist1.png
 
 * 散布図を表示する
 scatter colgpa sat
-* 保存しましょう（今度は...jpgで）
-graph export scat1.jpg
+* 保存しましょう
+graph export scat1.png
 ```
 ちゃんと画像が保存されているか確認してみる！
 

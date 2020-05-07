@@ -212,4 +212,13 @@
 . 
 {txt}end of do-file
 
+{com}. do "/var/folders/3n/xs20lgfn0037tdqm3c71s2x40000gn/T//SD68113.000000"
+{txt}
+{com}. * 保存されているデータなどを全て消去する
+. clear all
+{res}{txt}
 {com}. 
+. * logファイル（Stataのアウトプットが保存されているファイル）を閉じる
+. capture log close
+{smcl}
+{com}{sf}{ul off}
