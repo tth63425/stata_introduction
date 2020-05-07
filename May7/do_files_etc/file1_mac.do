@@ -39,8 +39,8 @@ graph export hist1.png, replace
 
 * 散布図を表示する
 scatter colgpa sat
-* 保存しましょう（今度は...jpgで）
-graph export scat1.jpg, replace
+* 保存しましょう
+graph export scat2.png, replace
 
 
 * ------------------------------------------------------------------------------
