@@ -1,9 +1,17 @@
 {smcl}
+<<<<<<< HEAD
 {com}{sf}{ul off}{txt}{.-}
       name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\SatoA\OneDrive\Documents\Okamuro Seminar\stata_introduction\May7\do_files_etc\stataoutput2.smcl
   {txt}log type:  {res}smcl
  {txt}opened on:  {res} 7 May 2020, 15:45:32
+=======
+{txt}{sf}{ul off}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/akirasato/Docs/stata_introduction/May7/do_files_etc/stataoutput2.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res} 7 May 2020, 15:41:57
+>>>>>>> aad820cfa2aa578c44f466b51b115d10bb3c4987
 {txt}
 {com}. 
 . * 使うデータセットをダウンロードする
@@ -42,16 +50,26 @@
 {res}{txt}
 {com}. * 保存しましょう（pngで）
 . graph export hist2.png, replace
+<<<<<<< HEAD
 {txt}(file hist2.png written in PNG format)
+=======
+{txt}(file /Users/akirasato/Docs/stata_introduction/May7/do_files_etc/hist2.png written in PNG format)
+>>>>>>> aad820cfa2aa578c44f466b51b115d10bb3c4987
 
 {com}. 
 . 
 . * 散布図を表示する
 . scatter expenditure income
 {res}{txt}
+<<<<<<< HEAD
 {com}. * 保存しましょう
 . graph export scat1.png, replace
 {txt}(file scat1.png written in PNG format)
+=======
+{com}. * 保存しましょう（今度は...jpgで）
+. graph export scat1.jpg, replace
+{txt}(file /Users/akirasato/Docs/stata_introduction/May7/do_files_etc/scat1.jpg written in JPG format)
+>>>>>>> aad820cfa2aa578c44f466b51b115d10bb3c4987
 
 {com}. 
 . reg expenditure income, r
@@ -113,7 +131,11 @@
 {com}. 
 {txt}end of do-file
 
+<<<<<<< HEAD
 {com}. do "C:\Users\SatoA\OneDrive\Documents\Okamuro Seminar\stata_introduction\May7\do_files_etc\file1_windows.do"
+=======
+{com}. do "/var/folders/3n/xs20lgfn0037tdqm3c71s2x40000gn/T//SD68113.000000"
+>>>>>>> aad820cfa2aa578c44f466b51b115d10bb3c4987
 {txt}
 {com}. /*
 > 一番最初に使ったDoファイルです。
