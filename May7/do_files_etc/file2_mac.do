@@ -32,7 +32,7 @@ graph export hist2.png, replace
 * 散布図を表示する
 scatter expenditure income
 * 保存しましょう
-graph export scat1.png, replace
+graph export scat2.png, replace
 
 reg expenditure income, r
 
