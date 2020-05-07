@@ -3,27 +3,93 @@
       name:  {res}<unnamed>
        {txt}log:  {res}/Users/akirasato/Docs/stata_introduction/May7/do_files_etc/stataoutput.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res} 7 May 2020, 01:38:20
+ {txt}opened on:  {res} 7 May 2020, 15:01:57
 {txt}
 {com}. 
 . * 使うデータセットをダウンロードする
 . * 途中から緑になってるけど，大丈夫。
-. use AER_credit_card_data.csv
-{err}{p 0 4 2}
-file AER_credit_card_data.csv
-not Stata format
-{p_end}
-{txt}{search r(610), local:r(610);}
+. import delimited AER_credit_card_data.csv
+{res}{text}(12 vars, 1,319 obs)
 
-end of do-file
-
-{search r(610), local:r(610);}
+{com}. 
+{txt}end of do-file
 
 {com}. do "/var/folders/3n/xs20lgfn0037tdqm3c71s2x40000gn/T//SD68113.000000"
 {txt}
-{com}. import delimited AER_credit_card_data.csv
-{res}{text}(12 vars, 1,319 obs)
+{com}. * ヒストグラムを表示する
+. hist income
+{txt}(bin={res}31{txt}, start={res}.20999999{txt}, width={res}.42870968{txt})
+{res}{txt}
+{com}. 
+{txt}end of do-file
 
+{com}. do "/var/folders/3n/xs20lgfn0037tdqm3c71s2x40000gn/T//SD68113.000000"
+{txt}
+{com}. * ヒストグラムを表示する
+. hist income
+{txt}(bin={res}31{txt}, start={res}.20999999{txt}, width={res}.42870968{txt})
+{res}{txt}
+{com}. * 保存しましょう（pngで）
+. graph export hist2.png, replace
+{txt}(file /Users/akirasato/Docs/stata_introduction/May7/do_files_etc/hist2.png written in PNG format)
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/3n/xs20lgfn0037tdqm3c71s2x40000gn/T//SD68113.000000"
+{txt}
+{com}. scatter expenditure income
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/3n/xs20lgfn0037tdqm3c71s2x40000gn/T//SD68113.000000"
+{txt}
+{com}. reg expenditure income, r
+
+{txt}Linear regression                               Number of obs     = {res}     1,319
+                                                {txt}F(1, 1317)        =  {res}    26.94
+                                                {txt}Prob > F          = {res}    0.0000
+                                                {txt}R-squared         = {res}    0.0790
+                                                {txt}Root MSE          =    {res} 261.34
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1} expenditure{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}income {c |}{col 14}{res}{space 2} 45.17489{col 26}{space 2} 8.703226{col 37}{space 1}    5.19{col 46}{space 3}0.000{col 54}{space 4} 28.10119{col 67}{space 3} 62.24859
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 33.02657{col 26}{space 2}  26.5988{col 37}{space 1}    1.24{col 46}{space 3}0.215{col 54}{space 4}-19.15408{col 67}{space 3} 85.20721
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/3n/xs20lgfn0037tdqm3c71s2x40000gn/T//SD68113.000000"
+{txt}
+{com}. reg expenditure income age, r
+
+{txt}Linear regression                               Number of obs     = {res}     1,319
+                                                {txt}F(2, 1316)        =  {res}    20.72
+                                                {txt}Prob > F          = {res}    0.0000
+                                                {txt}R-squared         = {res}    0.0855
+                                                {txt}Root MSE          =    {res} 260.52
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1} expenditure{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}income {c |}{col 14}{res}{space 2} 49.62554{col 26}{space 2} 8.866658{col 37}{space 1}    5.60{col 46}{space 3}0.000{col 54}{space 4} 32.23121{col 67}{space 3} 67.01986
+{txt}{space 9}age {c |}{col 14}{res}{space 2}-2.289466{col 26}{space 2} .5502782{col 37}{space 1}   -4.16{col 46}{space 3}0.000{col 54}{space 4}-3.368984{col 67}{space 3}-1.209948
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 94.08874{col 26}{space 2} 30.20973{col 37}{space 1}    3.11{col 46}{space 3}0.002{col 54}{space 4} 34.82426{col 67}{space 3} 153.3532
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/3n/xs20lgfn0037tdqm3c71s2x40000gn/T//SD68113.000000"
+{txt}
+{com}. gen income_quad = income^2
+{txt}
 {com}. 
 {txt}end of do-file
 

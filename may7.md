@@ -1,7 +1,8 @@
 ### はじめに
-  
+
+- **目標**： Stataに慣れる（コマンドを覚えることではない--あとで調べられるので！）
 - 一応授業時間と同じ105分で終わるように頑張ります。（2時間は絶対に行かないようにします。）
-- 途中退出，途中参加，自由です！
+- 途中退出，途中参加，自由です！（ミュートとかも）
 - もともと自分用に作っていたサイトなので，間違いやTypoが絶対どこかにあるはずです。遠慮なく指摘して欲しいです！（そのほうが皆も自分も勉強になると思うので！）
 - 質問も遠慮なくお願いします！話している途中で遮っても大丈夫です！
 - WindowsとMac両方用意しました。Zoomの名前かStataの背景色で区別できます。
@@ -151,19 +152,73 @@ reg colgpa sat hsize, r
 
 -------------------------------------------------
 
-ここから先は時間があったら...（なので説明が雑になっている）
+ここから先は時間があったら...（なので説明が雑です...）
 
 `outreg2`と回帰分析もう一回やるのどっちがいいですか？
 
+#### `outreg2`の場合
+
+まずインストール：
+```
+ssc install outreg2
+```
+
+コマンド：
+```
+reg colgpa sat, r
+outreg2 using table.doc, replace
+reg colgpa sat hsize, r
+outreg2 using table.doc, append
+```
+
+仮説検定の$$F$$値とか$$p$$値を記載したい？？
+
+コマンド：
+```
+reg colgpa sat, r
+test sat
+local F1 = r(F)
+local P1 = r(p)
+outreg2 using table2.doc, adds(F-value, `F1', p-value, `P1') replace
+
+reg colgpa sat hsize, r
+test sat
+local F2 = r(F)
+local P2 = r(p)
+outreg2 using table2.doc, adds(F-value, `F2', p-value, `P2') append
+```
+
+
+#### もう一回回帰分析を練習する場合
+
 [ここから](https://www.kaggle.com/dansbecker/aer-credit-card-data/download/DYG0lJkiXyrDQzIFwhNG%2Fversions%2FHjdoZXGWfpxE3eaaDoPR%2Ffiles%2FAER_credit_card_data.csv?datasetVersionNumber=1)データ[^*]をダウンロードする。保存場所気をつけてね！
 
-データは保存するときにファイル名を変えていなければ
+データは保存するときにファイル名を変えていなければ`use ...`のところを
 ```
 import delimited AER_credit_card_data.csv
 ```
-でいけます。（csvファイルのときは`import delimited`を使います。）
+変えればダウンロードできます。（csvファイルのときは`import delimited`を使います。）
 
-回帰分析してみましょう。ヒストグラムや散布図も...
+回帰分析してみましょう。ヒストグラムや散布図も...（計量経済的に意味があるとは限らない...）
+
+1. データの概要を表示してみましょう（かね）
+2. `income`のヒストグラム，偏ってる？（こむ）
+3. `income`と`expenditure`の散布図（`income`がx軸）どんな感じ？（さく）
+4. $$\text{expenditure}_i = \beta_0 + \beta_1 \text{income}_i + u_i$$をやる。$$\beta_1$$は？？（せの）
+5. $$\text{expenditure}_i = \beta_0 + \beta_1 \text{income}_i + \beta_2 \text{age}_i + u_i$$をやる。$$\beta_2$$は？（はや）
+6. （応用）$${\text{income}_i}^2$$は以下のコマンドで作れます。
+
+コマンド：
+```
+gen income_quad = income^2
+```
+
+`income_quad`ができていることをData Editorで確認して，以下の回帰分析をしてみる。（ふく）
+
+$$
+\text{expenditure}_i = \beta_0 + \beta_1 \text{income}_i + \beta_2 {\text{income}_i}^2 + \beta_3 \text{age}_i + u_i
+$$
+
 
 
 

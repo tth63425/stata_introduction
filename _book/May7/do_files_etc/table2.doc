@@ -14,8 +14,10 @@
 \ql \cell\qc (0.0673)\cell\qc (0.0677)\cell\row
 \ql \cell\qc \cell\qc \cell\row
 \ql Observations\cell\qc 4,137\cell\qc 4,137\cell\row
-\trowd\trgaph75\trleft-75\trqc\trbrdrb\brdrs\clbrdrb\brdrs\cellx1872\clbrdrb\brdrs\cellx3456\clbrdrb\brdrs\cellx5040
 \ql R-squared\cell\qc 0.167\cell\qc 0.170\cell\row
+\ql F-value\cell\qc 881\cell\qc 892.3\cell\row
+\trowd\trgaph75\trleft-75\trqc\trbrdrb\brdrs\clbrdrb\brdrs\cellx1872\clbrdrb\brdrs\cellx3456\clbrdrb\brdrs\cellx5040
+\ql p-value\cell\qc 0\cell\qc 0\cell\row
 \pard\qc
 Robust standard errors in parentheses\par
 *** p<0.01, ** p<0.05, * p<0.1\par
