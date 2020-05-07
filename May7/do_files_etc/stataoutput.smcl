@@ -1,0 +1,30 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/akirasato/Docs/stata_introduction/May7/do_files_etc/stataoutput.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res} 7 May 2020, 01:38:20
+{txt}
+{com}. 
+. * 使うデータセットをダウンロードする
+. * 途中から緑になってるけど，大丈夫。
+. use AER_credit_card_data.csv
+{err}{p 0 4 2}
+file AER_credit_card_data.csv
+not Stata format
+{p_end}
+{txt}{search r(610), local:r(610);}
+
+end of do-file
+
+{search r(610), local:r(610);}
+
+{com}. do "/var/folders/3n/xs20lgfn0037tdqm3c71s2x40000gn/T//SD68113.000000"
+{txt}
+{com}. import delimited AER_credit_card_data.csv
+{res}{text}(12 vars, 1,319 obs)
+
+{com}. 
+{txt}end of do-file
+
+{com}. 
