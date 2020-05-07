@@ -8,8 +8,8 @@
 - WindowsとMac両方用意しました。Zoomの名前かStataの背景色で区別できます。
   - Zoomの名前：Akira SatoとAkira Sato (Windows)
   - Stataの背景：黒がMac，白がWindows
-- 今日のコードは[ここで](https://github.com/tth63425/stata_introduction/tree/master/May7)見ることができます。
-- この仮ページは2,3日したら消すので，それ以降は[ここ](https://github.com/tth63425/stata_introduction/blob/master/may7.md)からみてください。
+- 今日のコードは[ここで](https://github.com/tth63425/stata_introduction/tree/master/May7/do_files_etc)見ることができます。
+- この仮ページは2,3日したら消すので，それ以降は[ここ](https://github.com/tth63425/stata_introduction/blob/master/may7.md)からみてください。（あとでノートにリンク貼っておきます）
 - Stataインストールしてありますか？
 
 ### 今日の流れ（たぶん）
@@ -213,15 +213,14 @@ import delimited AER_credit_card_data.csv
 gen income_quad = income^2
 ```
 
-`income_quad`ができていることをData Editorで確認して，以下の回帰分析をしてみる。（ふく）
+`income_quad`ができていることをData Editorで確認して，以下の回帰分析をしてみる。
 
 $$
 \text{expenditure}_i = \beta_0 + \beta_1 \text{income}_i + \beta_2 {\text{income}_i}^2 + \beta_3 \text{age}_i + u_i
 $$
 
-
-
-
+Q1. $$\beta_2$$は？（ふく）
+Q2. 切片は？（みつ）
 
 
 [^*] https://www.kaggle.com/dansbecker/aer-credit-card-data#AER_credit_card_data.csv

@@ -19,4 +19,25 @@ import delimited AER_credit_card_data.csv
 
 
 
-reg expenditure income
+* データの概要を表示する（sumでも大丈夫）
+summarize
+
+
+* ヒストグラムを表示する
+hist income
+* 保存しましょう（pngで）
+graph export hist2.png, replace
+
+
+* 散布図を表示する
+scatter expenditure income
+* 保存しましょう（今度は...jpgで）
+graph export scat1.jpg, replace
+
+reg expenditure income, r
+
+reg expenditure income age, r
+
+gen income_quad = income^2
+
+reg expenditure income income_quad age, r
