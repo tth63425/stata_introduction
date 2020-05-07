@@ -222,5 +222,10 @@ $$
 Q1. $$\beta_2$$は？（ふく）
 Q2. 切片は？（みつ）
 
+#### さいごに
+- Stataに慣れることができましたか？
+- あくまで一例です。
+- コマンドは自分で調べて色々試してみましょう。（西倉が紹介してくれたものをノートに追加しました。）
+
 
 [^*] https://www.kaggle.com/dansbecker/aer-credit-card-data#AER_credit_card_data.csv
