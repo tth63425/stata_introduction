@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}/Users/akirasato/Docs/stata_introduction/May7/do_files_etc/stataoutput.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res} 7 May 2020, 15:42:20
+ {txt}opened on:  {res} 7 May 2020, 18:19:05
 {txt}
 {com}. 
 . * 使うデータセットをダウンロードする
@@ -11,139 +11,43 @@
 . use http://fmwww.bc.edu/ec-p/data/wooldridge/gpa2
 {txt}
 {com}. 
-. 
-. * -------------------- 一旦ここで止めてデータEditorを見てみましょう ------------------
-. 
-. * データの概要を表示する（sumでも大丈夫）
-. summarize
+{txt}end of do-file
 
-{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
-{hline 13}{c +}{hline 57}
-{space 9}sat {c |}{res}      4,137    1030.331    139.4014        470       1540
-{txt}{space 6}tothrs {c |}{res}      4,137    52.83225    35.32959          6        137
-{txt}{space 6}colgpa {c |}{res}      4,137    2.652686    .6586347          0          4
-{txt}{space 5}athlete {c |}{res}      4,137    .0468939    .2114371          0          1
-{txt}{space 4}verbmath {c |}{res}      4,137    .8805369    .1491229     .25974    1.66667
-{txt}{hline 13}{c +}{hline 57}
-{space 7}hsize {c |}{res}      4,137    2.799727    1.736579        .03        9.4
-{txt}{space 6}hsrank {c |}{res}      4,137    52.83007    64.68358          1        634
-{txt}{space 6}hsperc {c |}{res}      4,137    19.23707    16.56873   .1666667         92
-{txt}{space 6}female {c |}{res}      4,137    .4496012    .4975136          0          1
-{txt}{space 7}white {c |}{res}      4,137    .9255499    .2625337          0          1
-{txt}{hline 13}{c +}{hline 57}
-{space 7}black {c |}{res}      4,137    .0553541    .2286978          0          1
-{txt}{space 5}hsizesq {c |}{res}      4,137    10.85345    12.62305      .0009      88.36
+{com}. ssc install outreg2
+{txt}checking {hilite:outreg2} consistency and verifying not already installed...
+all files already exist and are up to date.
+
+{com}. do "/var/folders/3n/xs20lgfn0037tdqm3c71s2x40000gn/T//SD64942.000000"
+{txt}
+{com}. reg colgpa sat, r
+
+{txt}Linear regression                               Number of obs     = {res}     4,137
+                                                {txt}F(1, 4135)        =  {res}   880.97
+                                                {txt}Prob > F          = {res}    0.0000
+                                                {txt}R-squared         = {res}    0.1670
+                                                {txt}Root MSE          =    {res} .60118
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}      colgpa{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}sat {c |}{col 14}{res}{space 2} .0019311{col 26}{space 2} .0000651{col 37}{space 1}   29.68{col 46}{space 3}0.000{col 54}{space 4} .0018035{col 67}{space 3} .0020586
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .6630568{col 26}{space 2} .0673015{col 37}{space 1}    9.85{col 46}{space 3}0.000{col 54}{space 4} .5311096{col 67}{space 3}  .795004
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. test sat
+
+{p 0 7}{space 1}{text:( 1)}{space 1} {res}sat = 0{p_end}
+
+{txt}       F(  1,  4135) ={res}  880.97
+{txt}{col 13}Prob > F ={res}    0.0000
 {txt}
 {com}. 
-. 
-. * ヒストグラムを表示する
-. hist sat
-{txt}(bin={res}36{txt}, start={res}470{txt}, width={res}29.722222{txt})
-{res}{txt}
-{com}. * 保存しましょう（pngで）
-. graph export hist1.png, replace
-{txt}(file /Users/akirasato/Docs/stata_introduction/May7/do_files_etc/hist1.png written in PNG format)
+{txt}end of do-file
 
-{com}. 
-. 
-. * 散布図を表示する
-. scatter colgpa sat
-{res}{txt}
-{com}. * 保存しましょう（今度は...jpgで）
-. graph export scat2.jpg, replace
-{txt}(file /Users/akirasato/Docs/stata_introduction/May7/do_files_etc/scat2.jpg written in JPG format)
-
-{com}. 
-. 
-. * ------------------------------------------------------------------------------
-. 
-. 
-. reg colgpa sat, r
-
-{txt}Linear regression                               Number of obs     = {res}     4,137
-                                                {txt}F(1, 4135)        =  {res}   880.97
-                                                {txt}Prob > F          = {res}    0.0000
-                                                {txt}R-squared         = {res}    0.1670
-                                                {txt}Root MSE          =    {res} .60118
-
-{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 14}{c |}{col 26}    Robust
-{col 1}      colgpa{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
-{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 9}sat {c |}{col 14}{res}{space 2} .0019311{col 26}{space 2} .0000651{col 37}{space 1}   29.68{col 46}{space 3}0.000{col 54}{space 4} .0018035{col 67}{space 3} .0020586
-{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .6630568{col 26}{space 2} .0673015{col 37}{space 1}    9.85{col 46}{space 3}0.000{col 54}{space 4} .5311096{col 67}{space 3}  .795004
-{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{res}{txt}
-{com}. 
-. reg colgpa sat hsize, r
-
-{txt}Linear regression                               Number of obs     = {res}     4,137
-                                                {txt}F(2, 4134)        =  {res}   446.53
-                                                {txt}Prob > F          = {res}    0.0000
-                                                {txt}R-squared         = {res}    0.1700
-                                                {txt}Root MSE          =    {res} .60018
-
-{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 14}{c |}{col 26}    Robust
-{col 1}      colgpa{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
-{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 9}sat {c |}{col 14}{res}{space 2} .0019475{col 26}{space 2} .0000652{col 37}{space 1}   29.87{col 46}{space 3}0.000{col 54}{space 4} .0018197{col 67}{space 3} .0020753
-{txt}{space 7}hsize {c |}{col 14}{res}{space 2}-.0207611{col 26}{space 2} .0055152{col 37}{space 1}   -3.76{col 46}{space 3}0.000{col 54}{space 4}-.0315739{col 67}{space 3}-.0099483
-{txt}{space 7}_cons {c |}{col 14}{res}{space 2}  .704257{col 26}{space 2} .0677068{col 37}{space 1}   10.40{col 46}{space 3}0.000{col 54}{space 4} .5715152{col 67}{space 3} .8369988
-{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{res}{txt}
-{com}. 
-. 
-. * -----------------------------------------------------------------------------
-. 
-. reg colgpa sat, r
-
-{txt}Linear regression                               Number of obs     = {res}     4,137
-                                                {txt}F(1, 4135)        =  {res}   880.97
-                                                {txt}Prob > F          = {res}    0.0000
-                                                {txt}R-squared         = {res}    0.1670
-                                                {txt}Root MSE          =    {res} .60118
-
-{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 14}{c |}{col 26}    Robust
-{col 1}      colgpa{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
-{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 9}sat {c |}{col 14}{res}{space 2} .0019311{col 26}{space 2} .0000651{col 37}{space 1}   29.68{col 46}{space 3}0.000{col 54}{space 4} .0018035{col 67}{space 3} .0020586
-{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .6630568{col 26}{space 2} .0673015{col 37}{space 1}    9.85{col 46}{space 3}0.000{col 54}{space 4} .5311096{col 67}{space 3}  .795004
-{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{res}{txt}
-{com}. 
-. outreg2 using table1.doc, replace
-{txt}{stata `"shellout using `"table1.doc"'"':table1.doc}
-{browse `"/Users/akirasato/Docs/stata_introduction/May7/do_files_etc"' :dir}{com} : {txt}{stata `"seeout using "table1.txt""':seeout}
-
-{com}. 
-. reg colgpa sat hsize, r
-
-{txt}Linear regression                               Number of obs     = {res}     4,137
-                                                {txt}F(2, 4134)        =  {res}   446.53
-                                                {txt}Prob > F          = {res}    0.0000
-                                                {txt}R-squared         = {res}    0.1700
-                                                {txt}Root MSE          =    {res} .60018
-
-{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 14}{c |}{col 26}    Robust
-{col 1}      colgpa{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
-{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 9}sat {c |}{col 14}{res}{space 2} .0019475{col 26}{space 2} .0000652{col 37}{space 1}   29.87{col 46}{space 3}0.000{col 54}{space 4} .0018197{col 67}{space 3} .0020753
-{txt}{space 7}hsize {c |}{col 14}{res}{space 2}-.0207611{col 26}{space 2} .0055152{col 37}{space 1}   -3.76{col 46}{space 3}0.000{col 54}{space 4}-.0315739{col 67}{space 3}-.0099483
-{txt}{space 7}_cons {c |}{col 14}{res}{space 2}  .704257{col 26}{space 2} .0677068{col 37}{space 1}   10.40{col 46}{space 3}0.000{col 54}{space 4} .5715152{col 67}{space 3} .8369988
-{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{res}{txt}
-{com}. 
-. outreg2 using table1.doc, append
-{txt}{stata `"shellout using `"table1.doc"'"':table1.doc}
-{browse `"/Users/akirasato/Docs/stata_introduction/May7/do_files_etc"' :dir}{com} : {txt}{stata `"seeout using "table1.txt""':seeout}
-
-{com}. 
-. * ------------------------------------------------------------------------------
-. 
-. reg colgpa sat, r
+{com}. do "/var/folders/3n/xs20lgfn0037tdqm3c71s2x40000gn/T//SD64942.000000"
+{txt}
+{com}. reg colgpa sat, r
 
 {txt}Linear regression                               Number of obs     = {res}     4,137
                                                 {txt}F(1, 4135)        =  {res}   880.97
@@ -208,17 +112,6 @@
 {browse `"/Users/akirasato/Docs/stata_introduction/May7/do_files_etc"' :dir}{com} : {txt}{stata `"seeout using "table2.txt""':seeout}
 
 {com}. 
-. * ------------------------------------------------------------------------------
-. 
 {txt}end of do-file
 
-{com}. do "/var/folders/3n/xs20lgfn0037tdqm3c71s2x40000gn/T//SD68113.000000"
-{txt}
-{com}. * 保存されているデータなどを全て消去する
-. clear all
-{res}{txt}
-{com}. 
-. * logファイル（Stataのアウトプットが保存されているファイル）を閉じる
-. capture log close
-{smcl}
-{com}{sf}{ul off}
+{com}. exit

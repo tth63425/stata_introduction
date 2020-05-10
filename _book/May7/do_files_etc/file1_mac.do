@@ -34,31 +34,35 @@ summarize
 * ヒストグラムを表示する
 hist sat
 * 保存しましょう（pngで）
-graph export hist1.png
+graph export hist1.png, replace
 
 * 散布図を表示する
 scatter colgpa sat
 * 保存しましょう
-graph export scat1.png
+graph export scat1.png, replace
 
 
 * ------------------------------------------------------------------------------
 
 
-reg colgpa sat, r
-
-reg colgpa sat hsize, r
 
 
 * -----------------------------------------------------------------------------
 
 reg colgpa sat, r
-
-outreg2 using table1.doc, replace
+test sat
+local F1 = r(F)
+local P1 = r(p)
+outreg2 using table2.doc, adds(F-value, `F1', p-value, `P1') replace
 
 reg colgpa sat hsize, r
+test sat
+local F2 = r(F)
+local P2 = r(p)
+outreg2 using table2.doc, adds(F-value, `F2', p-value, `P2') append
 
-outreg2 using table1.doc, append
+
+
 
 * ------------------------------------------------------------------------------
 
