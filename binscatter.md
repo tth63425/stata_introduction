@@ -13,7 +13,7 @@ ssc install binscatter
 
 ビン化された散布図の威力はデータの個数が多い時に発揮されます。以下の例をみていただければ，それは一目瞭然だと思います。データは`use http://fmwww.bc.edu/ec-p/data/wooldridge/401ksubs`を使っています[^*]。
 
-コマンド
+コマンド：
 ```
 scatter inc age
 graph export bin1.png, replace
