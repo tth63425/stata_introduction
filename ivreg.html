@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>5.2 残差を出力する · GitBook</title>
+        <title>8 操作変数法 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="poly.html" />
     
-    
-    <link rel="prev" href="simple_regression.html" />
+    <link rel="prev" href="panel.html" />
     
 
     </head>
@@ -281,7 +279,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6" data-path="residuals.html">
+        <li class="chapter " data-level="1.6" data-path="residuals.html">
             
                 <a href="residuals.html">
             
@@ -385,7 +383,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.14" data-path="ivreg.html">
+        <li class="chapter active" data-level="1.14" data-path="ivreg.html">
             
                 <a href="ivreg.html">
             
@@ -428,7 +426,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >5.2 残差を出力する</a>
+        <a href="." >8 操作変数法</a>
     </h1>
 </div>
 
@@ -443,15 +441,39 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x6B8B;&#x5DEE;&#x3092;&#x51FA;&#x529B;&#x3059;&#x308B;">&#x6B8B;&#x5DEE;&#x3092;&#x51FA;&#x529B;&#x3059;&#x308B;</h1>
-<p>&#x56DE;&#x5E30;&#x5206;&#x6790;&#x306E;&#x6B8B;&#x5DEE;&#x3092;&#x51FA;&#x529B;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x306F;<code>predict</code>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3068;<code>residuals</code>&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x5229;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+                                <h4 id="&#x64CD;&#x4F5C;&#x5909;&#x6570;&#x6CD5;">&#x64CD;&#x4F5C;&#x5909;&#x6570;&#x6CD5;</h4>
+<p>&#x4EE5;&#x4E0B;&#x3067;&#x306F;&#x64CD;&#x4F5C;&#x5909;&#x6570;&#x6CD5;&#x3092;&#x7D39;&#x4ECB;&#x3057;&#x307E;&#x3059;&#x3002;&#x64CD;&#x4F5C;&#x5909;&#x6570;&#x6CD5;&#x5B9F;&#x969B;&#x306B;&#x5206;&#x6790;&#x3059;&#x308B;&#x524D;&#x306B;&#x69D8;&#x3005;&#x306A;&#x4EEE;&#x5B9A;&#x304C;&#x6E80;&#x305F;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x304B;&#x30C1;&#x30A7;&#x30C3;&#x30AF;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x304C;&#xFF0C;&#x3053;&#x3053;&#x3067;&#x306F;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x306E;&#x307F;&#x306B;&#x6CE8;&#x76EE;&#x3057;&#x3066;&#xFF0C;&#x305D;&#x308C;&#x3089;&#x306F;&#x5168;&#x3066;&#x6E80;&#x305F;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x3068;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x4EE5;&#x4E0B;&#x3067;&#x306F;<code>y</code>&#x304C;&#x88AB;&#x8AAC;&#x660E;&#x5909;&#x6570;&#xFF0C;<code>x</code>&#x304C;&#x64CD;&#x4F5C;&#x5909;&#x6570;&#x3067;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30EB;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x8AAC;&#x660E;&#x5909;&#x6570;&#xFF0C;<code>w1, w2</code>&#x304C;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30EB;&#x5909;&#x6570;&#xFF0C;<code>z1, z2</code>&#x304C;&#x64CD;&#x4F5C;&#x5909;&#x6570;&#x3068;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x64CD;&#x4F5C;&#x5909;&#x6570;&#x6CD5;&#x306B;&#x306F;<code>ivregress 2sls</code>&#x3092;&#x4F7F;&#x3046;&#x3068;&#x4FBF;&#x5229;&#x3067;&#x3059;&#x3002;&#xFF08;2sls: two-stage least squares, 2&#x6BB5;&#x968E;&#x6700;&#x5C0F;2&#x4E57;&#x6CD5;&#xFF09;</p>
+<p>Pseudo-code:</p>
+<pre><code>* &#x64CD;&#x4F5C;&#x5909;&#x6570;&#x6CD5;
+ivregress 2sls y (x = z1 z2) w1 w2, r
+</code></pre><p><code>ivregress</code>&#x306E;&#x6700;&#x5F8C;&#x306B;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3067;&#x9811;&#x5065;&#x6027;&#x306E;&#x3042;&#x308B;&#x6A19;&#x6E96;&#x8AA4;&#x5DEE;&#x3092;&#x5229;&#x7528;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;<code>,r</code>&#x3068;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x304C;&#xFF0C;&#x56FA;&#x5B9A;&#x52B9;&#x679C;&#x304C;&#x3042;&#x308B;&#x5834;&#x5408;&#x306F;<code>, vce(cluster &#x30AF;&#x30E9;&#x30B9;&#x30BF;&#x30FC;&#x3057;&#x305F;&#x3044;&#x5909;&#x6570;)</code>&#x3068;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x904E;&#x5270;&#x8B58;&#x5225;&#x691C;&#x5B9A;&#x3092;&#x884C;&#x3046;&#x306B;&#x306F;&#x4E0A;&#x306E;<code>ivregress</code>&#x306B;&#x7D9A;&#x3051;&#x3066;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>Pseudo-code:</p>
+<pre><code>* &#x904E;&#x5270;&#x8B58;&#x5225;&#x691C;&#x5B9A;&#x3092;&#x884C;&#x3046;&#xFF0C;&#x7B49;&#x5206;&#x6563;&#xFF08;&#x64CD;&#x4F5C;&#x5909;&#x6570;&#x306E;&#x6570;&#x306E;&#x65B9;&#x304C;&#x5185;&#x751F;&#x5909;&#x6570;&#x3088;&#x308A;&#x591A;&#x3044;&#xFF09;
+estat overid, forcenonrobust
+* J-test&#x306E;&#x30B9;&#x30B3;&#x30A2;&#x3068;p&#x5024;&#x8868;&#x793A;&#xFF0C;&#x4E0D;&#x5747;&#x4E00;&#x5206;&#x6563;
+dis &quot;HR J-test = &quot; r(score) &quot; HR p-value = &quot; r(p_score)
+* &#x7B49;&#x5206;&#x6563;&#x306E;&#x5834;&#x5408;
+dis &quot;Homoskedastic J-test = &quot; r(basmann) &quot; Homoskedastic p-value = &quot; r(p_basmann)
+</code></pre><p>&#x5206;&#x6563;&#x4E0D;&#x5747;&#x4E00;&#x3068;&#x81EA;&#x5DF1;&#x76F8;&#x95A2;&#x306B;&#x5BFE;&#x5FDC;&#x3057;&#x305F;&#x5F31;&#x76F8;&#x9593;&#x64CD;&#x4F5C;&#x5909;&#x6570;&#x306E;&#x691C;&#x5B9A;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3059;&#x3002;&#x307E;&#x305A;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;&#x304B;&#x3089;<code>ssc install weakivtest</code>&#x3067;<code>weakivtest</code>&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x3092;Stata&#x306B;&#x5165;&#x308C;&#x307E;&#x3059;&#x3002;&#x305D;&#x3057;&#x3066;&#xFF0C;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3059;&#x3002;</p>
 <p>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#xFF1A;</p>
-<pre><code>reg salary roe, r
-predict uhat1, residuals
-reg salary roe ros, r
-predict uhat2, residuals
-</code></pre><p>&#x4E0A;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3067;&#x306F;1&#x3064;&#x76EE;&#x306E;&#x56DE;&#x5E30;&#x5206;&#x6790;&#x306E;&#x6B8B;&#x5DEE;&#x3092;<code>uhat1</code>&#x306B;&#x4FDD;&#x5B58;&#x3057;&#xFF0C;<code>uhat2</code>&#x306B;&#x306F;2&#x3064;&#x76EE;&#x306E;&#x56DE;&#x5E30;&#x5206;&#x6790;&#x306E;&#x7D50;&#x679C;&#x3092;&#x4FDD;&#x5B58;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;4&#x884C;&#x3092;&#x307E;&#x3068;&#x3081;&#x3066;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;2&#x3064;&#x306E;&#x56DE;&#x5E30;&#x5206;&#x6790;&#x306E;&#x6B8B;&#x5DEE;&#x304C;&#x30C7;&#x30FC;&#x30BF;&#x306B;&#x4FDD;&#x5B58;&#x3055;&#x308C;&#xFF0C;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x898B;&#x308B;&#x3068;&#x5143;&#x304B;&#x3089;&#x3042;&#x308B;&#x5909;&#x6570;&#x306B;&#x52A0;&#x3048;&#x3066;<code>uhat1</code>&#x3068;<code>uhat2</code>&#x304C;&#x8FFD;&#x52A0;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x308F;&#x304B;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>ivregress 2sls y (x = z1 z2) w1 w2, r
 
+* &#x5F31;&#x76F8;&#x9593;&#x64CD;&#x4F5C;&#x5909;&#x6570;&#x306E;&#x691C;&#x5B9A;&#x3068;&#x8A98;&#x5C0E;&#x5F62;&#xFF08;&#x7B2C;&#x4E00;&#x6BB5;&#x968E;&#x56DE;&#x5E30;&#xFF09;&#x306E;F&#x5024;&#xFF0C;&#x6700;&#x60AA;&#x306E;&#x30B1;&#x30FC;&#x30B9;&#x306E;&#x95BE;&#x5024;&#xFF08;10%&#x3067;&#x306E;&#xFF09;&#x8868;&#x793A;
+weakivtest
+dis &quot;First stage F = &quot; r(F_eff)
+dis &quot;Critical value = &quot; r(c_TSLS_10)
+</code></pre><h5 id="anderson-and-rubin-1949&#x306E;&#x4FE1;&#x983C;&#x533A;&#x9593;&#xFF08;fff&#x304C;critical-value&#x3088;&#x308A;&#x5C0F;&#x3055;&#x3044;&#x6642;&#xFF09;">Anderson and Rubin (1949)&#x306E;&#x4FE1;&#x983C;&#x533A;&#x9593;&#xFF08;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">F</span></span></span></span>&#x304C;critical value&#x3088;&#x308A;&#x5C0F;&#x3055;&#x3044;&#x6642;&#xFF09;</h5>
+<p>&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#xFF1A;</p>
+<pre><code>ssc install weakiv
+</code></pre><p>Pseudo-code:</p>
+<pre><code>ivregress 2sls y (x = z1 z2) w1 w2, r
+
+* &#x4FE1;&#x983C;&#x533A;&#x9593;&#x8868;&#x793A;
+weakiv
+</code></pre>
                                 
                                 </section>
                             
@@ -478,14 +500,10 @@ predict uhat2, residuals
 
             
                 
-                <a href="simple_regression.html" class="navigation navigation-prev " aria-label="Previous page: 5.1 単回帰分析・重回帰分析">
+                <a href="panel.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 7.2 パネルデータ">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="poly.html" class="navigation navigation-next " aria-label="Next page: 5.2 多項式・logを用いた回帰">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -494,7 +512,7 @@ predict uhat2, residuals
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"5.2 残差を出力する","level":"1.6","depth":1,"next":{"title":"5.2 多項式・logを用いた回帰","level":"1.7","depth":1,"path":"poly.md","ref":"poly.md","articles":[]},"previous":{"title":"5.1 単回帰分析・重回帰分析","level":"1.5","depth":1,"path":"simple_regression.md","ref":"simple_regression.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["katex"],"pluginsConfig":{"katex":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"residuals.md","mtime":"2020-05-01T11:18:52.890Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T04:18:36.167Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"8 操作変数法","level":"1.14","depth":1,"previous":{"title":"7.2 パネルデータ","level":"1.13","depth":1,"path":"panel.md","ref":"panel.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["katex"],"pluginsConfig":{"katex":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ivreg.md","mtime":"2020-05-11T03:25:32.892Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-17T04:18:36.167Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
